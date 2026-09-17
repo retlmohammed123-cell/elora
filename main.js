@@ -1,53 +1,41 @@
-/**
- * ==========================================================================
- * ELORA - ملف التفاعلية والمنطق البرمجي الرئيسي المستقر فائق السلاسة
- * ==========================================================================
- */
-
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menuToggle"),
           navLinks = document.getElementById("navLinks"),
-          themeToggle = document.getElementById("themeToggle");
+          themeToggle = document.getElementById("themeToggle"),
+          contactForm = document.getElementById("contactForm"),
+          formMessage = document.getElementById("formMessage");
 
-    // 1. فتح وإغلاق قائمة الموبايل التفاعلية بنعومة فائقة
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
-    }
+    // فرض الوضع الداكن المستقر
+    document.body.classList.add("dark");
 
-    // إغلاق قائمة الموبايل تلقائيًا عند الضغط على أي رابط بداخلها لتسهيل تجربة التصفح
-    document.querySelectorAll(".nav-links a").forEach(a => {
-        a.addEventListener("click", () => navLinks?.classList.remove("open"));
-    });
+    // فتح وإغلاق قائمة الموبايل
+    if (menuToggle) menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+    document.querySelectorAll(".nav-links a").forEach(a => a.addEventListener("click", () => navLinks?.classList.remove("open")));
 
-    // 2. وظيفة التبديل الهيكلي وضمان المزامنة المثالية مع نمط الألوان الجديد
-    function setTheme(dark) {
-        document.body.classList.toggle("dark", dark);
-        if (themeToggle) themeToggle.textContent = dark ? "☀" : "☾";
-        localStorage.setItem("elora-theme", dark ? "dark" : "light");
-    }
-
-    const saved = localStorage.getItem("elora-theme");
-    if (saved === "dark") setTheme(true);
-
-    if (themeToggle) {
-        themeToggle.addEventListener("click", () => setTheme(!document.body.classList.contains("dark")));
-    }
-
-    // 3. تحديث نصوص التلميح (Placeholders) داخل نموذج الاتصال لتصبح بالعربية تماشياً مع التصميم الجديد كالصورة
-    const nameInput = document.querySelector('.contact-form input[type="text"]');
-    const emailInput = document.querySelector('.contact-form input[type="email"]');
-    const messageInput = document.querySelector('.contact-form textarea');
+    // تعريب وتحديث نصوص التلميح (Placeholders) ديناميكياً لتناسب الهيكل المطور
+    const nameInput = document.getElementById("username");
+    const emailInput = document.getElementById("useremail");
+    const messageInput = document.getElementById("usermessage");
 
     if (nameInput) nameInput.setAttribute('placeholder', 'الاسم الكامل');
     if (emailInput) emailInput.setAttribute('placeholder', 'البريد الإلكتروني');
-    if (messageInput) messageInput.setAttribute('placeholder', 'اكتب رسالتك أو استفسارك هنا...');
+    if (messageInput) messageInput.setAttribute('placeholder', 'اكتب تفاصيل رسالتك أو استفسارك هنا...');
 
-    // 4. محرك الحركات المعزز (Intersection Observer) لظهور الكروت بنعومة فائقة أثناء التمرير
+    // معالجة نموذج الاتصال وعرض رسالة النجاح التفاعلية بالأسفل
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (formMessage) {
+                formMessage.textContent = 'تم استلام الرسالة تجريبيًا. عند ربط الموقع بخدمة إرسال، ستصل الرسائل فعليًا.';
+            }
+            contactForm.reset();
+        });
+    }
+
+    // محرك حركات التمرير (Intersection Observer)
     const io = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
+            if (entry.isIntersecting) entry.target.classList.add("visible");
         });
     }, { threshold: .1 });
 
