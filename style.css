@@ -1,7 +1,6 @@
 /* ==========================================================================
-   ELORA - المظهر الكحلي الفاخر المدمج باللون الوردي (Pink) فائق السلاسة
+   1. الإعدادات الأساسية والهوية البصرية الأصلية للمنصة
    ========================================================================== */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,7 +12,7 @@ html {
 }
 
 body {
-    font-family: Cairo, sans-serif;
+    font-family: 'Cairo', sans-serif;
     background: #0a1424; /* لون كحلي داكن عميق ومريح للعين */
     color: #fce7f3;      /* كتابة بلون بينك ناعم ومريح جداً للقراءة */
     line-height: 1.7;
@@ -30,7 +29,7 @@ body.dark {
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.25s ease;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
 button, input, textarea {
@@ -43,7 +42,16 @@ button, input, textarea {
     margin: auto;
 }
 
-/* الهيدر وقائمة التنقل المستقرة */
+.narrow {
+    max-width: 850px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. الهيدر وقائمة التنقل المستقرة (Navbar)
+   ========================================================================== */
 .site-header {
     position: fixed;
     top: 16px;
@@ -132,7 +140,9 @@ button, input, textarea {
     display: none;
 }
 
-/* مراجعة وتحسين مظهر الأزرار بالكامل */
+/* ==========================================================================
+   3. الأزرار (Buttons)
+   ========================================================================== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -178,9 +188,17 @@ button, input, textarea {
     transform: translateY(-2px);
 }
 
-/* أقسام الموقع والهيرو */
+/* ==========================================================================
+   4. أقسام الموقع والهيرو (Sections & Hero)
+   ========================================================================== */
 .section {
     padding: 110px 0;
+}
+
+.page-hero {
+    padding-top: 175px; 
+    padding-bottom: 75px;
+    text-align: center;
 }
 
 .hero {
@@ -208,6 +226,8 @@ button, input, textarea {
     color: #f472b6;
     font-size: 11px;
     font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .eyebrow i {
@@ -217,13 +237,13 @@ button, input, textarea {
     background: #f472b6;
 }
 
-.eyebrow.plain { background: transparent; padding: 0; }
+.eyebrow.plain { background: transparent; padding: 0; margin-bottom: 12px; }
 .eyebrow.light { background: rgba(255, 255, 255, 0.08); color: #fbcfe8; }
 
 .hero h1, .page-hero h1 {
-    font-size: clamp(42px, 5.2vw, 70px);
-    line-height: 1.15;
-    letter-spacing: -1.5px;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
     font-weight: 900;
     margin: 22px 0;
     color: #ffffff;
@@ -238,7 +258,7 @@ button, input, textarea {
     color: #cbd5e1; /* تباين مريح جداً ونظيف للنصوص */
     font-size: 16px;
     line-height: 2;
-    margin-bottom: 28px;
+    margin: 0 auto 28px;
 }
 
 /* الإحصائيات الفنية والديكور الحركي */
@@ -282,73 +302,87 @@ button, input, textarea {
 .pill-3 { bottom: 20px; right: 80px; animation-delay: -3s; }
 .pill-4 { top: 145px; left: 20px; animation-delay: -4s; }
 
-/* الكروت الزجاجية بهوية كحلي ومؤثرات البينك */
-.section-soft { background: linear-gradient(135deg, #070d18, #0a1424); }
-.section-heading h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.3; margin: 12px 0; color: #fff; }
-.section-heading p { color: #94a3b8; }
-.row-heading { display: flex; justify-content: space-between; align-items: flex-end; max-width: none; }
-.text-link { color: #f472b6; font-size: 13px; font-weight: 900; }
-.text-link:hover { color: #fbcfe8; }
+/* ==========================================================================
+   5. الكروت الزجاجية والبطاقات ومحاذاة المربعات المتناسقة
+   ========================================================================== */
+.section-soft { 
+    background: linear-gradient(135deg, #070d18, #0a1424); 
+    border-top: 1px solid rgba(244, 114, 182, 0.08);
+    border-bottom: 1px solid rgba(244, 114, 182, 0.08);
+}
 
-.idea-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; }
+.section-heading { 
+    text-align: center; 
+    margin-bottom: 56px; 
+}
+
+.section-heading h2 { 
+    font-size: clamp(30px, 4vw, 42px); 
+    line-height: 1.3; 
+    margin: 12px 0; 
+    color: #fff; 
+    font-weight: 800;
+}
+
+.section-heading p { 
+    color: #94a3b8; 
+    font-size: 15px;
+}
+
+/* توزيع متناسق وشبكي للمربعات بصفحة الفرص */
+.opportunity-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 32px; 
+    padding: 10px 0;
+}
+
+/* الكروت الزجاجية والبطاقات المتكاملة والمحاذاة للخطوط والمربعات */
 .glass-card, .track-card, .detail-card, .opportunity-card {
-    background: rgba(15, 32, 59, 0.5); /* زجاجي كحلي رائع */
-    border: 1px solid rgba(244, 114, 182, 0.06);
-    border-radius: 25px;
-    padding: 28px;
+    background: rgba(15, 32, 59, 0.4); 
+    border: 1px solid rgba(244, 114, 182, 0.08);
+    border-radius: 24px;
+    padding: 38px 32px; /* مسافات داخلية واسعة لمنع التصاق الحواف */
     box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* محاذاة لليمين بانتظام في الـ RTL */
+    text-align: right;       /* محاذاة الخطوط العربية */
+    position: relative;
     transition: .35s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .glass-card:hover, .track-card:hover, .detail-card:hover, .opportunity-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-6px);
     border-color: rgba(244, 114, 182, 0.35);
-    background: rgba(21, 41, 74, 0.75);
+    background: rgba(21, 41, 74, 0.7);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
-.big-card { grid-row: span 2; min-height: 300px; }
-.card-index, .track-no { font: 800 11px "Plus Jakarta Sans"; color: #f472b6; }
 
-.icon-box {
-    width: 52px;
-    height: 52px;
-    border-radius: 17px;
-    background: rgba(244, 114, 182, 0.12);
+/* العناوين والفقرات بداخل الكروت الزجاجية والمربعات */
+.glass-card h3, .track-card h3 { 
+    font-size: 20px; 
+    color: #ffffff; 
+    margin-bottom: 8px; 
+    font-weight: 700;
+}
+
+.glass-card p, .track-card p, .detail-card p, .opportunity-card p { 
+    color: #cbd5e1; 
+    font-size: 13px; 
+    line-height: 1.9; 
+    margin-bottom: 18px; 
+}
+
+.opportunity-card p {
+    font-size: 15px; /* تكبير خط الشرح في كروت الفرص لزيادة التناسق */
+    flex-grow: 1;   /* تساوي أطوال المربعات تلقائياً */
+}
+
+/* الأرقام الترتيبية (01, 02) */
+.opportunity-card > span {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
     color: #f472b6;
-    display: grid;
-    place-items: center;
-    font-size: 22px;
-    margin: 18px 0;
-}
-.glass-card h3, .track-card h3 { font-size: 20px; color: #ffffff; margin-bottom: 8px; }
-.glass-card p, .track-card p, .detail-card p, .opportunity-card p { color: #cbd5e1; font-size: 13px; line-height: 1.9; margin-bottom: 18px; }
-
-/* شبكة المسارات والفوتر */
-.track-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.track-card { min-height: 270px; position: relative; }
-.track-footer { position: absolute; bottom: 25px; right: 28px; color: #94a3b8; font: 700 9px "Plus Jakarta Sans"; }
-
-.cta-band {
-    margin: 0 auto 110px;
-    width: min(1160px, 92%);
-    border-radius: 40px;
-    background: linear-gradient(135deg, #070d18, #1e1b4b, #4c1d95);
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
-    border: 1px solid rgba(244, 114, 182, 0.1);
-}
-.cta-content { padding: 80px 20px; }
-.cta-content h2 { font-size: clamp(31px, 4vw, 52px); line-height: 1.45; margin: 18px 0; }
-.cta-content h2 span { color: #fbcfe8; }
-.cta-content p { max-width: 650px; margin: 0 auto 25px; color: #e2e8f0; }
-
-.footer { background: #050b14; padding: 60px 0 30px; border-top: 1px solid rgba(244, 114, 182, 0.1); }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 45px; }
-.footer h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
-.footer p { color: #94a3b8; font-size: 14px; }
-.footer a { display: block; color: #94a3b8; font-size: 14px; margin-bottom: 10px; }
-.footer a:hover { color: #f472b6; }
-.copyright { border-top: 1px solid rgba(244, 114, 182, 0.05); padding-top: 20px; color: #64748b; font-size: 13px; }
-
-/* أجزاء التفاعل الإضافية */
-.page-hero { padding-top: 175px; padding-bottom: 75px; }
-.narrow { max-width: 850px; margin-right: auto; margin-left: auto; }
+    letter-spacing: 0.5px;
