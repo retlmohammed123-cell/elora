@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ELORA - المظهر الكحلي الفاخر المدمج باللون الوردي (Pink) فائق السلاسة
+   ELORA - المظهر الكحلي والوردي الفاخر مع تخصيص كامل لقسم التواصل بالأبيض والأسود
    ========================================================================== */
 
 * {
@@ -9,19 +9,18 @@
 }
 
 html {
-    scroll-behavior: smooth; /* تمرير أصلي سلس */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Cairo, sans-serif;
-    background: #0a1424; /* لون كحلي داكن عميق ومريح للعين */
-    color: #fce7f3;      /* كتابة بلون بينك ناعم ومريح جداً للقراءة */
+    background: #0a1424; /* كحلي داكن للموقع */
+    color: #fce7f3;      /* بينك ناعم للموقع */
     line-height: 1.7;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* التوافق التام مع نمط التبديل */
 body.dark {
     background: #0a1424;
     color: #fce7f3;
@@ -35,7 +34,6 @@ a {
 
 button, input, textarea {
     font: inherit;
-    color: inherit;
 }
 
 .container {
@@ -43,7 +41,7 @@ button, input, textarea {
     margin: auto;
 }
 
-/* الهيدر وقائمة التنقل المستقرة */
+/* الهيدر وقائمة التنقل */
 .site-header {
     position: fixed;
     top: 16px;
@@ -58,9 +56,9 @@ button, input, textarea {
     align-items: center;
     gap: 22px;
     padding: 10px 16px;
-    background: rgba(10, 20, 36, 0.85); /* كحلي مدمج بتأثير زجاجي */
+    background: rgba(10, 20, 36, 0.85);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(244, 114, 182, 0.15); /* إطار بينك شفاف */
+    border: 1px solid rgba(244, 114, 182, 0.15);
     border-radius: 22px;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
 }
@@ -70,7 +68,7 @@ button, input, textarea {
     align-items: center;
     gap: 9px;
     font: 800 22px "Plus Jakarta Sans";
-    color: #f472b6; /* اسم البراند باللون البينك المضيء */
+    color: #f472b6;
     white-space: nowrap;
 }
 
@@ -80,7 +78,7 @@ button, input, textarea {
     border-radius: 13px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, #db2777, #f472b6); /* تدرج بينك فاخر */
+    background: linear-gradient(135deg, #db2777, #f472b6);
     color: #fff;
     box-shadow: 0 8px 24px rgba(219, 39, 119, 0.35);
 }
@@ -97,7 +95,7 @@ button, input, textarea {
     border-radius: 11px;
     font-size: 13px;
     font-weight: 700;
-    color: #fbcfe8; /* درجات بينك ناعمة */
+    color: #fbcfe8;
     transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -124,15 +122,12 @@ button, input, textarea {
     place-items: center;
     transition: .3s;
 }
-.icon-btn:hover {
-    background: rgba(244, 114, 182, 0.1);
-}
 
 .menu-toggle {
     display: none;
 }
 
-/* مراجعة وتحسين مظهر الأزرار بالكامل */
+/* الأزرار */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -148,7 +143,7 @@ button, input, textarea {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #db2777, #ec4899); /* أزرار أساسية باللون الوردي */
+    background: linear-gradient(135deg, #db2777, #ec4899);
     color: #fff;
     box-shadow: 0 10px 28px rgba(219, 39, 119, 0.3);
 }
@@ -163,19 +158,11 @@ button, input, textarea {
     border-color: rgba(244, 114, 182, 0.2);
     color: #f472b6;
 }
-.btn-ghost:hover {
-    background: rgba(244, 114, 182, 0.15);
-    transform: translateY(-2px);
-}
 
 .btn-white {
     background: #fdf2f8;
     color: #db2777;
     border: 1px solid rgba(219, 39, 119, 0.2);
-}
-.btn-white:hover {
-    background: #fbcfe8;
-    transform: translateY(-2px);
 }
 
 /* أقسام الموقع والهيرو */
@@ -230,18 +217,18 @@ button, input, textarea {
 }
 
 .hero h1 span, .page-hero h1 span, .cta-content h2 span {
-    color: #f472b6; /* الكلمات الهامة باللون البينك الجذاب */
+    color: #f472b6;
 }
 
 .hero p, .page-hero p {
     max-width: 590px;
-    color: #cbd5e1; /* تباين مريح جداً ونظيف للنصوص */
+    color: #cbd5e1;
     font-size: 16px;
     line-height: 2;
     margin-bottom: 28px;
 }
 
-/* الإحصائيات الفنية والديكور الحركي */
+/* الإحصائيات والديكور الحركي */
 .mini-stats { display: flex; gap: 30px; margin-top: 38px; }
 .mini-stats div { display: flex; flex-direction: column; }
 .mini-stats strong { font: 800 21px "Plus Jakarta Sans"; color: #f472b6; }
@@ -282,17 +269,16 @@ button, input, textarea {
 .pill-3 { bottom: 20px; right: 80px; animation-delay: -3s; }
 .pill-4 { top: 145px; left: 20px; animation-delay: -4s; }
 
-/* الكروت الزجاجية بهوية كحلي ومؤثرات البينك */
+/* الكروت الزجاجية الكحلية */
 .section-soft { background: linear-gradient(135deg, #070d18, #0a1424); }
 .section-heading h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.3; margin: 12px 0; color: #fff; }
 .section-heading p { color: #94a3b8; }
 .row-heading { display: flex; justify-content: space-between; align-items: flex-end; max-width: none; }
 .text-link { color: #f472b6; font-size: 13px; font-weight: 900; }
-.text-link:hover { color: #fbcfe8; }
 
 .idea-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; }
 .glass-card, .track-card, .detail-card, .opportunity-card {
-    background: rgba(15, 32, 59, 0.5); /* زجاجي كحلي رائع */
+    background: rgba(15, 32, 59, 0.5);
     border: 1px solid rgba(244, 114, 182, 0.06);
     border-radius: 25px;
     padding: 28px;
@@ -321,7 +307,7 @@ button, input, textarea {
 .glass-card h3, .track-card h3 { font-size: 20px; color: #ffffff; margin-bottom: 8px; }
 .glass-card p, .track-card p, .detail-card p, .opportunity-card p { color: #cbd5e1; font-size: 13px; line-height: 1.9; margin-bottom: 18px; }
 
-/* شبكة المسارات والفوتر */
+/* شبكة المسارات والبانر */
 .track-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .track-card { min-height: 270px; position: relative; }
 .track-footer { position: absolute; bottom: 25px; right: 28px; color: #94a3b8; font: 700 9px "Plus Jakarta Sans"; }
@@ -349,96 +335,15 @@ button, input, textarea {
 .footer a:hover { color: #f472b6; }
 .copyright { border-top: 1px solid rgba(244, 114, 182, 0.05); padding-top: 20px; color: #64748b; font-size: 13px; }
 
-/* أجزاء التفاعل الإضافية */
+/* الصفحات الداخلية والرحلة */
 .page-hero { padding-top: 175px; padding-bottom: 75px; }
 .narrow { max-width: 850px; margin-right: auto; margin-left: auto; }
 
-/* ==========================================================================
-   تعديل مخصص لقسم التواصل: خلفية بيضاء ونصوص سوداء مريحة
-   ========================================================================== */
-.contact-grid { 
-    display: grid; 
-    grid-template-columns: 1fr 1.5fr; 
-    gap: 35px; 
-}
+.journey-map { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.map-step { padding: 18px 20px; border-radius: 18px; background: rgba(15, 32, 59, 0.8); border: 1px solid rgba(244, 114, 182, 0.2); text-align: center; }
+.map-step b { display: block; color: #f472b6; font: 800 10px "Plus Jakarta Sans"; }
+.map-step span { font-size: 12px; font-weight: 800; color: #fff; }
+.journey-map i { color: #f472b6; }
 
-/* الكروت الجانبية لبيانات التواصل */
-.contact-grid .contact-item { 
-    display: flex; 
-    gap: 15px; 
-    align-items: center; 
-    margin-bottom: 25px; 
-    background: #ffffff; /* خلفية بيضاء */
-    padding: 15px 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e2e8f0;
-}
-
-.contact-grid .contact-item span { 
-    width: 45px; 
-    height: 45px; 
-    background: rgba(219, 39, 119, 0.1); /* خلفية بينك خفيفة للرمز */
-    color: #db2777;                      /* لون الرمز بينك داكن */
-    display: grid; 
-    place-items: center; 
-    border-radius: 12px; 
-    font-size: 20px; 
-}
-
-.contact-grid .contact-item small { 
-    font: 800 10px "Plus Jakarta Sans"; 
-    color: #64748b; /* رمادي للنص الفرعي */
-}
-
-.contact-grid .contact-item h3 { 
-    font-size: 16px; 
-    color: #0f172a; /* نص أسود داكن مريح جداً */
-}
-
-/* نموذج إرسال الرسائل (Form) */
-.contact-form {
-    background: #ffffff; /* خلفية بيضاء للنموذج */
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e2e8f0;
-}
-
-.contact-form label { 
-    display: block; 
-    margin-bottom: 18px; 
-    font-size: 14px; 
-    font-weight: 700; 
-    color: #1e293b; /* عناوين المدخلات باللون الأسود */
-}
-
-.contact-form input, .contact-form textarea { 
-    width: 100%; 
-    padding: 14px 18px; 
-    background: #f8fafc;           /* خلفية رمادية فاتحة جداً للمدخلات */
-    border: 1px solid #cbd5e1;     /* إطار واضح */
-    border-radius: 14px; 
-    margin-top: 6px; 
-    color: #0f172a;                /* الكتابة باللون الأسود الداكن */
-    outline: none; 
-    font-size: 14px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.contact-form input:focus, .contact-form textarea:focus { 
-    border-color: #db2777; /* يتحول الإطار للوردي عند الضغط والكتابة */
-    box-shadow: 0 0 10px rgba(219, 39, 119, 0.15); 
-    background: #ffffff;
-}
-
-.contact-form input::placeholder, .contact-form textarea::placeholder {
-    color: #94a3b8; /* لون نص التلميح المساعد */
-}
-
-/* رسالة نجاح الإرسال التجريربية */
-#formMessage {
-    margin-top: 15px; 
-    font-weight: 700; 
-    color: #db2777;
-}
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+.quote-card { padding: 40px; border-radius: 30px; background: linear-gradient(145deg, #db2777, #4c1d95); color: #fff; box-shadow: 0 25px 70px rgba(219, 39, 119, 0.2); }
