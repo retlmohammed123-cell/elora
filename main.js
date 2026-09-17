@@ -1,43 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menuToggle"),
-          navLinks = document.getElementById("navLinks"),
-          themeToggle = document.getElementById("themeToggle"),
-          contactForm = document.getElementById("contactForm"),
-          formMessage = document.getElementById("formMessage");
+/**
+ * ==========================================================================
+ * ELORA - ملف التفاعلية والمنطق البرمجي الرئيسي (الإصدار المستقر النهائي)
+ * ==========================================================================
+ */
 
-    // فرض الوضع الداكن المستقر
-    document.body.classList.add("dark");
+const menuToggle = document.getElementById("menuToggle"),
+      navLinks = document.getElementById("navLinks"),
+      themeToggle = document.getElementById("themeToggle");
 
-    // فتح وإغلاق قائمة الموبايل
-    if (menuToggle) menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
-    document.querySelectorAll(".nav-links a").forEach(a => a.addEventListener("click", () => navLinks?.classList.remove("open")));
+// 1. فتح وإغلاق قائمة الموبايل التفاعلية بسلاسة
+if (menuToggle) {
+    menuToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
+}
 
-    // تعريب وتحديث نصوص التلميح (Placeholders) ديناميكياً لتناسب الهيكل المطور
-    const nameInput = document.getElementById("username");
-    const emailInput = document.getElementById("useremail");
-    const messageInput = document.getElementById("usermessage");
-
-    if (nameInput) nameInput.setAttribute('placeholder', 'الاسم الكامل');
-    if (emailInput) emailInput.setAttribute('placeholder', 'البريد الإلكتروني');
-    if (messageInput) messageInput.setAttribute('placeholder', 'اكتب تفاصيل رسالتك أو استفسارك هنا...');
-
-    // معالجة نموذج الاتصال وعرض رسالة النجاح التفاعلية بالأسفل
-    if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            if (formMessage) {
-                formMessage.textContent = 'تم استلام الرسالة تجريبيًا. عند ربط الموقع بخدمة إرسال، ستصل الرسائل فعليًا.';
-            }
-            contactForm.reset();
-        });
-    }
-
-    // محرك حركات التمرير (Intersection Observer)
-    const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
-        });
-    }, { threshold: .1 });
-
-    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+// إغلاق قائمة الموبايل تلقائيًا عند الضغط على أي رابط بداخلها
+document.querySelectorAll(".nav-links a").forEach(a => {
+    a.addEventListener("click", () => navLinks?.classList.remove("open"));
 });
+
+// 2. وظيفة إدارة وتبديل الهوية مع الحفاظ على المنطق البرمجي والترتيب الأصلي
+function setTheme(dark) {
+    document.body.classList.toggle("dark", dark);
+    if (themeToggle) themeToggle.textContent = dark ? "☀" : "☾";
+    localStorage.setItem("elora-theme", dark ? "dark" : "light");
+}
+
+const saved = localStorage.getItem("elora-theme");
+if (saved === "dark") setTheme(true);
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => setTheme(!document.body.classList.contains("dark")));
+}
+
+// 3. مراقبة العناصر وحركات التمرير والانتقال السلس الفائق (Intersection Observer)
+const io = new IntersectionObserver(es => {
+    es.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add("visible");
+        }
+    });
+}, { threshold: .1 });
+
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
