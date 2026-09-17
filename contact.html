@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تواصل معنا | ELORA</title>
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -41,7 +41,7 @@
 
         <section class="section">
             <div class="container contact-grid">
-                <!-- قسم بيانات التواصل الجانبية المتناسقة مع الخلفية الكحلية -->
+                <!-- قسم بيانات التواصل بعد التحديث والمراجعة الشاملة -->
                 <div class="contact-info reveal">
                     <div class="contact-item">
                         <span>✉</span>
@@ -66,19 +66,19 @@
                     </div>
                 </div>
 
-                <!-- نموذج الإرسال المطور بهيكل عمودي مطابق للصورة المرفقة تماماً -->
+                <!-- نموذج الإرسال مع تحسين المدخلات والبريد الإلكتروني وأداء الأزرار -->
                 <form class="contact-form reveal" id="contactForm">
-                    <div class="form-group">
-                        <input required type="text" id="username" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <input required type="email" id="useremail" placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <textarea required rows="6" id="usermessage" placeholder="Your Message"></textarea>
-                    </div>
-                    <button class="btn btn-primary btn-submit" type="submit">Send Message</button>
-                    <p id="formMessage" class="form-message"></p>
+                    <label>الاسم
+                        <input required type="text" placeholder="اكتب اسمك الثلاثي">
+                    </label>
+                    <label>البريد الإلكتروني
+                        <input required type="email" placeholder="name@example.com">
+                    </label>
+                    <label>رسالتك أو استفسارك
+                        <textarea required rows="6" placeholder="اكتب تفاصيل رسالتك هنا..."></textarea>
+                    </label>
+                    <button class="btn btn-primary" type="submit">إرسال الرسالة الآن</button>
+                    <p id="formMessage" class="form-message" style="margin-top: 15px; font-weight: 700; color: #f472b6;"></p>
                 </form>
             </div>
         </section>
@@ -105,5 +105,12 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            document.getElementById('formMessage').textContent = 'تم استلام الرسالة تجريبيًا. عند ربط الموقع بخدمة إرسال، ستصل الرسائل فعليًا.';
+            e.target.reset();
+        });
+    </script>
 </body>
 </html>
