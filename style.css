@@ -387,3 +387,60 @@ input:focus, textarea:focus {
 .footer a { display: block; margin-bottom: 10px; color: #94a3b8; font-size: 14px; }
 .footer a:hover { color: #f472b6; }
 .copyright { text-align: center; color: #64748b; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+/* ==========================================================================
+   تنسيق أزرار الرحلة التفاعلية القسرية (إصلاح اللون الأبيض)
+   ========================================================================== */
+#journeySteps {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+.journey-step-btn {
+    background: #0f203b !important; /* لون كحلي داكن واضح كمكان للضغط */
+    color: #fce7f3 !important;      /* نص وردي ناعم */
+    border: 1px solid rgba(244, 114, 182, 0.2) !important;
+    padding: 14px 20px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+}
+
+/* تأثير تمرير الماوس فوق الزر الكحلي */
+.journey-step-btn:hover {
+    background: rgba(244, 114, 182, 0.15) !important;
+    border-color: #f472b6 !important;
+    color: #ffffff !important;
+}
+
+/* التنسيق الخاص بالزر النشط (المرحلة المختارة حالياً) */
+.journey-step-btn.active {
+    background: linear-gradient(135deg, #db2777, #ec4899) !important; /* تدرج وردي مضيء */
+    border-color: transparent !important;
+    color: #ffffff !important;
+    transform: translateX(-5px) !important; /* حركة تفاعلية جهة اليمين */
+    box-shadow: 0 8px 20px rgba(219, 39, 119, 0.3) !important;
+}
+
+/* تنسيق النصوص الداخلية للأزرار */
+.journey-step-btn .step-title {
+    text-align: right !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+}
+
+.journey-step-btn .step-num {
+    font-weight: 800 !important;
+    color: #f472b6 !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.journey-step-btn.active .step-num,
+.journey-step-btn.active .step-title {
+    color: #ffffff !important;
+}
