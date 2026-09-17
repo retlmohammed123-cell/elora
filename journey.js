@@ -12,13 +12,18 @@ const journeyData = [
 
 const box = document.getElementById("journeySteps");
 
-// بناء أزرار المراحل ديناميكيًا داخل القائمة الجانبية
+// بناء أزرار المراحل ديناميكيًا داخل القائمة الجانبية بشكل منسق
 if (box) {
+    box.innerHTML = ""; // تنظيف الحاوية أولاً لمنع التكرار
     journeyData.forEach((d, i) => {
         const b = document.createElement("button");
-        // تم تحديث الكلاس هنا ليتوافق مع الـ CSS المحسّن (journey-step-btn)
         b.className = "journey-step-btn" + (i === 0 ? " active" : "");
-        b.innerHTML = `<b>${String(i + 1).padStart(2, "0")}. </b> <span>${d.en}</span>`;
+        b.style.width = "100%";
+        b.style.display = "flex";
+        b.style.justifyContent = "space-between";
+        b.style.alignItems = "center";
+        
+        b.innerHTML = `<span style="font-weight: 800; color: #f472b6;">${String(i + 1).padStart(2, "0")}.</span> <span style="flex-grow: 1; text-align: right; margin-right: 10px;">${d.title}</span>`;
         b.onclick = () => showJourney(i);
         box.appendChild(b);
     });
@@ -33,7 +38,7 @@ function showJourney(i) {
     // تبديل كلاس active بين الأزرار المحدثة
     document.querySelectorAll(".journey-step-btn").forEach((b, n) => b.classList.toggle("active", n === i));
     
-    // تحديث النصوص والوسوم داخل لوحة العرض الخاصة بالرحلة مع حماية الهيكل البصري
+    // تحديث النصوص والوسوم داخل لوحة العرض
     const panelNo = document.getElementById("panelNo");
     const panelEn = document.getElementById("panelEn");
     const panelTitle = document.getElementById("panelTitle");
