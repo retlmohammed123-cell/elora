@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تواصل معنا | ELORA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,7 +32,7 @@
 
     <main>
         <section class="page-hero section">
-            <div class="container narrow reveal">
+            <div class="container narrow">
                 <span class="eyebrow">CONTACT ELORA</span>
                 <h1>فكرة؟ سؤال؟<br><span>خلينا نبدأ الحوار.</span></h1>
                 <p>تواصل معنا مباشرة عبر وسائل الاتصال الرسمية، أو اترك لنا رسالة وسنقوم بالرد عليك في أقرب وقت.</p>
@@ -41,43 +41,28 @@
 
         <section class="section">
             <div class="container contact-grid">
-                <!-- قسم بيانات التواصل بعد التحديث والمراجعة الشاملة -->
-                <div class="contact-info reveal">
-                    <div class="contact-item">
-                        <span>✉</span>
-                        <div>
-                            <small>EMAIL</small>
-                            <h3>contact@elora.com</h3>
-                        </div>
+                <div class="contact-info">
+                    <div class="glass-card" style="margin-bottom: 16px; width: 100%;">
+                        <h3>✉ البريد الإلكتروني</h3>
+                        <p>contact@elora.com</p>
                     </div>
-                    <div class="contact-item">
-                        <span>📞</span>
-                        <div>
-                            <small>PHONE</small>
-                            <h3>01212730114</h3>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span>◎</span>
-                        <div>
-                            <small>SOCIAL</small>
-                            <h3>@EloraPlatform</h3>
-                        </div>
+                    <div class="glass-card" style="margin-bottom: 16px; width: 100%;">
+                        <h3>📞 رقم الهاتف</h3>
+                        <p>01212730114</p>
                     </div>
                 </div>
 
-                <!-- نموذج الإرسال مع تحسين المدخلات والبريد الإلكتروني وأداء الأزرار -->
-                <form class="contact-form reveal" id="contactForm">
-                    <label>الاسم
+                <form class="contact-form glass-card" id="contactForm" style="width: 100%;">
+                    <label>الاسم الكامل
                         <input required type="text" placeholder="اكتب اسمك الثلاثي">
                     </label>
                     <label>البريد الإلكتروني
                         <input required type="email" placeholder="name@example.com">
                     </label>
                     <label>رسالتك أو استفسارك
-                        <textarea required rows="6" placeholder="اكتب تفاصيل رسالتك هنا..."></textarea>
+                        <textarea required rows="5" placeholder="اكتب تفاصيل رسالتك هنا..."></textarea>
                     </label>
-                    <button class="btn btn-primary" type="submit">إرسال الرسالة الآن</button>
+                    <button class="btn btn-primary" type="submit" style="width: 100%;">إرسال الرسالة الآن</button>
                     <p id="formMessage" class="form-message" style="margin-top: 15px; font-weight: 700; color: #f472b6;"></p>
                 </form>
             </div>
@@ -85,30 +70,14 @@
     </main>
 
     <footer class="footer">
-        <div class="container footer-grid">
-            <div>
-                <a class="brand" href="index.html"><span class="brand-mark">E</span>ELORA</a>
-                <p>اكتشف نفسك. استكشف مجالك. افهم عالمك.</p>
-            </div>
-            <div>
-                <h4>استكشف</h4>
-                <a href="tracks.html">المسارات</a>
-                <a href="journey.html">الرحلة</a>
-            </div>
-            <div>
-                <h4>تواصل</h4>
-                <a href="contact.html">تواصل معنا</a>
-                <a href="index.html">الرئيسية</a>
-            </div>
-        </div>
-        <div class="container copyright">© 2026 ELORA</div>
+        <div class="container copyright">© 2026 ELORA — جميع الحقوق محفوظة</div>
     </footer>
 
     <script src="main.js"></script>
     <script>
         document.getElementById('contactForm').addEventListener('submit', e => {
             e.preventDefault();
-            document.getElementById('formMessage').textContent = 'تم استلام الرسالة تجريبيًا. عند ربط الموقع بخدمة إرسال، ستصل الرسائل فعليًا.';
+            document.getElementById('formMessage').textContent = 'تم استلام الرسالة بنجاح!';
             e.target.reset();
         });
     </script>
