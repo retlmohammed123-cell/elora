@@ -1,8 +1,7 @@
 /* ==========================================================================
-   ELORA - المظهر الكحلي الفاخر باللون البينك العصري (الإصدار المستقر الشامل والأخير)
+   ELORA - المظهر الكحلي الفاخر المدمج باللون الوردي (Pink) فائق السلاسة
    ========================================================================== */
 
-/* إعادة التعيين والخصائص العامة */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,39 +9,41 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* تمرير أصلي سلس */
 }
 
 body {
-    font-family: 'Cairo', Arial, sans-serif;
-    background-color: #070d19; /* خلفية كحلي عميقة جداً ومريحة للعين */
-    color: #f8f9fa;            /* نص أساسي ناصع وناعم */
+    font-family: Cairo, sans-serif;
+    background: #0a1424; /* لون كحلي داكن عميق ومريح للعين */
+    color: #fce7f3;      /* كتابة بلون بينك ناعم ومريح جداً للقراءة */
     line-height: 1.7;
     overflow-x: hidden;
-    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
-    direction: rtl;            /* دعم التصفح العربي المتوافق مع خط Cairo */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* التوافق التام مع نمط التبديل */
+body.dark {
+    background: #0a1424;
+    color: #fce7f3;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.25s ease;
 }
 
 button, input, textarea {
     font: inherit;
     color: inherit;
-    background: transparent;
-    border: none;
-    outline: none;
 }
 
 .container {
-    width: min(1180px, 92%);
+    width: min(1160px, 92%);
     margin: auto;
 }
 
-/* الهيدر وقائمة التنقل */
+/* الهيدر وقائمة التنقل المستقرة */
 .site-header {
     position: fixed;
     top: 16px;
@@ -57,21 +58,19 @@ button, input, textarea {
     align-items: center;
     gap: 22px;
     padding: 10px 16px;
-    background: rgba(11, 19, 41, 0.8); /* تأثير زجاجي باللون الكحلي */
+    background: rgba(10, 20, 36, 0.85); /* كحلي مدمج بتأثير زجاجي */
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 121, 198, 0.15); /* حدود بلمسة بينك خفيفة */
+    border: 1px solid rgba(244, 114, 182, 0.15); /* إطار بينك شفاف */
     border-radius: 22px;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 9px;
-    font: 800 22px "Plus Jakarta Sans", sans-serif;
-    color: #ff79c6; /* لون براند بينك مضيء */
+    font: 800 22px "Plus Jakarta Sans";
+    color: #f472b6; /* اسم البراند باللون البينك المضيء */
     white-space: nowrap;
 }
 
@@ -81,32 +80,30 @@ button, input, textarea {
     border-radius: 13px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, #bd93f9, #ff79c6); /* تدرج بينك وبنفسجي فاخر */
+    background: linear-gradient(135deg, #db2777, #f472b6); /* تدرج بينك فاخر */
     color: #fff;
-    font-weight: 800;
-    box-shadow: 0 8px 24px rgba(255, 121, 198, 0.4);
+    box-shadow: 0 8px 24px rgba(219, 39, 119, 0.35);
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 3px;
     flex: 1;
 }
 
 .nav-links a {
-    padding: 9px 13px;
+    padding: 9px 11px;
     border-radius: 11px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
-    color: #a2adb8; /* كحلي رمادي هادئ للعناصر غير النشطة */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #fbcfe8; /* درجات بينك ناعمة */
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-links a:hover, 
-.nav-links a.active {
-    background: rgba(255, 121, 198, 0.12); /* تأثير خلفية بينك ناعم */
-    color: #ff79c6;
+.nav-links a:hover, .nav-links a.active {
+    background: rgba(244, 114, 182, 0.15);
+    color: #f472b6;
 }
 
 .nav-actions {
@@ -118,167 +115,67 @@ button, input, textarea {
 .icon-btn, .menu-toggle {
     width: 40px;
     height: 40px;
-    border: 1px solid rgba(255, 121, 198, 0.2);
+    border: 1px solid rgba(244, 114, 182, 0.2);
     background: transparent;
     border-radius: 12px;
     cursor: pointer;
-    color: #ff79c6;
+    color: #f472b6;
     display: grid;
     place-items: center;
-    font-size: 18px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: .3s;
 }
-
 .icon-btn:hover {
-    background: rgba(255, 121, 198, 0.15);
-    transform: scale(1.05);
+    background: rgba(244, 114, 182, 0.1);
 }
 
 .menu-toggle {
     display: none;
 }
 
-/* ==========================================================================
-   مراجعة وتحديث الأزرار العصرية الفائقة السلاسة (All Buttons State)
-   ========================================================================== */
+/* مراجعة وتحسين مظهر الأزرار بالكامل */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 12px 24px;
+    padding: 12px 22px;
     border-radius: 14px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     border: 1px solid transparent;
     cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                background-color 0.3s ease, 
-                border-color 0.3s ease;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #e14eca, #ff79c6); /* تدرج بينك غني */
+    background: linear-gradient(135deg, #db2777, #ec4899); /* أزرار أساسية باللون الوردي */
     color: #fff;
-    box-shadow: 0 10px 28px rgba(255, 121, 198, 0.3);
+    box-shadow: 0 10px 28px rgba(219, 39, 119, 0.3);
 }
 
 .btn-primary:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(255, 121, 198, 0.5);
-}
-
-.btn-primary:active {
-    transform: translateY(-1px) scale(0.98);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(219, 39, 119, 0.5);
 }
 
 .btn-ghost {
-    background: rgba(11, 19, 41, 0.4);
-    border: 1px solid rgba(255, 121, 198, 0.25);
-    color: #ff92df;
+    background: rgba(244, 114, 182, 0.05);
+    border-color: rgba(244, 114, 182, 0.2);
+    color: #f472b6;
 }
-
 .btn-ghost:hover {
-    background: rgba(255, 121, 198, 0.1);
-    border-color: #ff79c6;
+    background: rgba(244, 114, 182, 0.15);
     transform: translateY(-2px);
-}
-
-.btn-ghost:active {
-    transform: translateY(0);
 }
 
 .btn-white {
-    background: #ffffff;
-    color: #e14eca;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+    background: #fdf2f8;
+    color: #db2777;
+    border: 1px solid rgba(219, 39, 119, 0.2);
 }
-
 .btn-white:hover {
-    background: #fff0fa;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.1);
-}
-
-/* زر مخصص ومبهر للاتصال ورقم الهاتف الجديد */
-.btn-contact-phone {
-    background: rgba(11, 19, 41, 0.6);
-    border: 1px solid rgba(255, 121, 198, 0.4);
-    color: #ffffff;
-    font-family: "Plus Jakarta Sans", 'Cairo', sans-serif;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-}
-
-.btn-contact-phone i {
-    color: #ff79c6;
-    font-size: 16px;
-    animation: pulse 2s infinite;
-}
-
-.btn-contact-phone:hover {
-    background: linear-gradient(135deg, #ff79c6, #e14eca);
-    color: #ffffff;
-    border-color: transparent;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(255, 121, 198, 0.4);
-}
-
-.btn-contact-phone:hover i {
-    color: #ffffff;
-}
-
-/* ==========================================================================
-   شكل إضافة البريد الإلكتروني العصرية والفاخرة (Subscription Form)
-   ========================================================================== */
-.subscribe-form {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 520px;
-    margin: 30px auto 0;
-    background: rgba(7, 13, 25, 0.6);
-    border: 1px solid rgba(255, 121, 198, 0.2);
-    padding: 6px 8px;
-    border-radius: 18px;
-    backdrop-filter: blur(10px);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.subscribe-form:focus-within {
-    border-color: #ff79c6;
-    box-shadow: 0 0 25px rgba(255, 121, 198, 0.15);
+    background: #fbcfe8;
     transform: translateY(-2px);
-}
-
-.subscribe-input {
-    flex: 1;
-    padding: 12px 16px;
-    font-size: 14px;
-    color: #ffffff;
-    background: transparent;
-}
-
-.subscribe-input::placeholder {
-    color: #6c7d93;
-}
-
-.subscribe-btn {
-    padding: 12px 26px;
-    border-radius: 13px;
-    font-size: 13px;
-    font-weight: 800;
-    color: #ffffff;
-    background: linear-gradient(135deg, #e14eca, #ff79c6);
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.subscribe-btn:hover {
-    transform: scale(1.02);
-    filter: brightness(1.1);
 }
 
 /* أقسام الموقع والهيرو */
@@ -291,7 +188,7 @@ button, input, textarea {
     padding-top: 145px;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at 15% 20%, rgba(255, 121, 198, 0.08), transparent 50%), #070d19;
+    background: radial-gradient(circle at 15% 20%, rgba(219, 39, 119, 0.1), transparent 45%), #0a1424;
 }
 
 .hero-grid {
@@ -305,86 +202,54 @@ button, input, textarea {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 7px 14px;
+    padding: 7px 12px;
     border-radius: 50px;
-    background: rgba(255, 121, 198, 0.15);
-    color: #ff79c6;
-    font-size: 12px;
-    font-weight: 800;
+    background: rgba(244, 114, 182, 0.15);
+    color: #f472b6;
+    font-size: 11px;
+    font-weight: 900;
 }
 
 .eyebrow i {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #ff79c6;
+    background: #f472b6;
 }
 
+.eyebrow.plain { background: transparent; padding: 0; }
+.eyebrow.light { background: rgba(255, 255, 255, 0.08); color: #fbcfe8; }
+
 .hero h1, .page-hero h1 {
-    font-size: clamp(40px, 5vw, 66px);
-    line-height: 1.2;
-    letter-spacing: -1px;
+    font-size: clamp(42px, 5.2vw, 70px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
     font-weight: 900;
     margin: 22px 0;
     color: #ffffff;
 }
 
-.hero h1 span, .page-hero h1 span, .cta-content h2 span, .contact-highlight {
-    color: #ff79c6; 
+.hero h1 span, .page-hero h1 span, .cta-content h2 span {
+    color: #f472b6; /* الكلمات الهامة باللون البينك الجذاب */
 }
 
 .hero p, .page-hero p {
     max-width: 590px;
-    color: #a2adb8; 
+    color: #cbd5e1; /* تباين مريح جداً ونظيف للنصوص */
     font-size: 16px;
     line-height: 2;
     margin-bottom: 28px;
 }
 
-/* الإحصائيات الفنية والأرت */
-.mini-stats {
-    display: flex;
-    gap: 35px;
-    margin-top: 38px;
-}
+/* الإحصائيات الفنية والديكور الحركي */
+.mini-stats { display: flex; gap: 30px; margin-top: 38px; }
+.mini-stats div { display: flex; flex-direction: column; }
+.mini-stats strong { font: 800 21px "Plus Jakarta Sans"; color: #f472b6; }
+.mini-stats span { font-size: 11px; color: #94a3b8; }
 
-.mini-stats div {
-    display: flex;
-    flex-direction: column;
-}
-
-.mini-stats strong {
-    font: 800 24px "Plus Jakarta Sans", sans-serif;
-    color: #ff79c6;
-}
-
-.mini-stats span {
-    font-size: 12px;
-    color: #6c7d93;
-}
-
-.hero-art {
-    min-height: 500px;
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-
-.hero-glow {
-    position: absolute;
-    width: 390px;
-    height: 390px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 121, 198, 0.12) 0%, transparent 70%);
-}
-
-.orbit {
-    position: absolute;
-    border: 2px dashed rgba(255, 121, 198, 0.15);
-    border-radius: 50%;
-    animation: spin 25s linear infinite;
-}
-
+.hero-art { min-height: 500px; display: grid; place-items: center; position: relative; }
+.hero-glow { position: absolute; width: 390px; height: 390px; border-radius: 50%; background: radial-gradient(circle, rgba(244, 114, 182, 0.12) 0%, transparent 70%); }
+.orbit { position: absolute; border: 2px dashed rgba(244, 114, 182, 0.15); border-radius: 50%; animation: spin 25s linear infinite; }
 .orbit-a { width: 280px; height: 280px; }
 .orbit-b { width: 420px; height: 420px; animation-direction: reverse; animation-duration: 35s; }
 
@@ -393,46 +258,97 @@ button, input, textarea {
     width: 170px;
     height: 215px;
     border-radius: 90px 90px 45px 45px;
-    background: linear-gradient(145deg, #e14eca, #ff79c6);
+    background: linear-gradient(145deg, #db2777, #f472b6);
     z-index: 2;
-    box-shadow: 0 30px 65px rgba(255, 121, 198, 0.35);
+    box-shadow: 0 30px 65px rgba(219, 39, 119, 0.3);
 }
 
 .floating-pill {
     position: absolute;
     z-index: 4;
-    background: rgba(11, 19, 41, 0.85); 
+    background: rgba(10, 20, 36, 0.9);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 121, 198, 0.25);
-    padding: 12px 18px;
+    border: 1px solid rgba(244, 114, 182, 0.25);
+    padding: 12px 15px;
     border-radius: 16px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
-    color: #ffd2f1;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    animation: float 6s ease-in-out infinite;
+    color: #fce7f3;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    animation: float 5s ease-in-out infinite;
 }
+.pill-1 { top: 40px; right: 5px; }
+.pill-2 { bottom: 100px; left: 0; animation-delay: -1.5s; }
+.pill-3 { bottom: 20px; right: 80px; animation-delay: -3s; }
+.pill-4 { top: 145px; left: 20px; animation-delay: -4s; }
 
-.pill-1 { top: 40px; left: 5px; }
-.pill-2 { bottom: 100px; right: 0; animation-delay: -1.5s; }
-.pill-3 { bottom: 20px; left: 80px; animation-delay: -3s; }
-.pill-4 { top: 145px; right: 20px; animation-delay: -4.5s; }
+/* الكروت الزجاجية بهوية كحلي ومؤثرات البينك */
+.section-soft { background: linear-gradient(135deg, #070d18, #0a1424); }
+.section-heading h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.3; margin: 12px 0; color: #fff; }
+.section-heading p { color: #94a3b8; }
+.row-heading { display: flex; justify-content: space-between; align-items: flex-end; max-width: none; }
+.text-link { color: #f472b6; font-size: 13px; font-weight: 900; }
+.text-link:hover { color: #fbcfe8; }
 
-/* السيكشن الفرعي والبطاقات الزجاجية الداكنة */
-.section-soft {
-    background: linear-gradient(135deg, #0b1329, #070d19); 
+.idea-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 16px; }
+.glass-card, .track-card, .detail-card, .opportunity-card {
+    background: rgba(15, 32, 59, 0.5); /* زجاجي كحلي رائع */
+    border: 1px solid rgba(244, 114, 182, 0.06);
+    border-radius: 25px;
+    padding: 28px;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2);
+    transition: .35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.section-heading {
-    max-width: 700px;
-    margin-bottom: 45px;
+.glass-card:hover, .track-card:hover, .detail-card:hover, .opportunity-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(244, 114, 182, 0.35);
+    background: rgba(21, 41, 74, 0.75);
 }
+.big-card { grid-row: span 2; min-height: 300px; }
+.card-index, .track-no { font: 800 11px "Plus Jakarta Sans"; color: #f472b6; }
 
-.section-heading h2 {
-    font-size: clamp(30px, 4vw, 48px);
-    line-height: 1.3;
-    margin: 12px 0;
-    color: #ffffff;
+.icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 17px;
+    background: rgba(244, 114, 182, 0.12);
+    color: #f472b6;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    margin: 18px 0;
 }
+.glass-card h3, .track-card h3 { font-size: 20px; color: #ffffff; margin-bottom: 8px; }
+.glass-card p, .track-card p, .detail-card p, .opportunity-card p { color: #cbd5e1; font-size: 13px; line-height: 1.9; margin-bottom: 18px; }
 
+/* شبكة المسارات والفوتر */
+.track-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.track-card { min-height: 270px; position: relative; }
+.track-footer { position: absolute; bottom: 25px; right: 28px; color: #94a3b8; font: 700 9px "Plus Jakarta Sans"; }
+
+.cta-band {
+    margin: 0 auto 110px;
+    width: min(1160px, 92%);
+    border-radius: 40px;
+    background: linear-gradient(135deg, #070d18, #1e1b4b, #4c1d95);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(244, 114, 182, 0.1);
+}
+.cta-content { padding: 80px 20px; }
+.cta-content h2 { font-size: clamp(31px, 4vw, 52px); line-height: 1.45; margin: 18px 0; }
+.cta-content h2 span { color: #fbcfe8; }
+.cta-content p { max-width: 650px; margin: 0 auto 25px; color: #e2e8f0; }
+
+.footer { background: #050b14; padding: 60px 0 30px; border-top: 1px solid rgba(244, 114, 182, 0.1); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 45px; }
+.footer h4 { color: #fff; margin-bottom: 15px; font-size: 16px; }
+.footer p { color: #94a3b8; font-size: 14px; }
+.footer a { display: block; color: #94a3b8; font-size: 14px; margin-bottom: 10px; }
+.footer a:hover { color: #f472b6; }
+.copyright { border-top: 1px solid rgba(244, 114, 182, 0.05); padding-top: 20px; color: #64748b; font-size: 13px; }
+
+/* أجزاء التفاعل الإضافية */
+.page-hero { padding-top: 175px; padding-bottom: 75px; }
+.narrow { max-width: 850px; margin-right: auto; margin-left: auto; }
