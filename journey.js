@@ -16,8 +16,9 @@ const box = document.getElementById("journeySteps");
 if (box) {
     journeyData.forEach((d, i) => {
         const b = document.createElement("button");
-        b.className = "journey-btn" + (i === 0 ? " active" : "");
-        b.innerHTML = `<b>${String(i + 1).padStart(2, "0")}</b><span>${d.en}</span>`;
+        // تم تحديث الكلاس هنا ليتوافق مع الـ CSS المحسّن (journey-step-btn)
+        b.className = "journey-step-btn" + (i === 0 ? " active" : "");
+        b.innerHTML = `<b>${String(i + 1).padStart(2, "0")}. </b> <span>${d.en}</span>`;
         b.onclick = () => showJourney(i);
         box.appendChild(b);
     });
@@ -29,13 +30,19 @@ if (box) {
 function showJourney(i) {
     const d = journeyData[i];
     
-    // تبديل كلاس active بين الأزرار
-    document.querySelectorAll(".journey-btn").forEach((b, n) => b.classList.toggle("active", n === i));
+    // تبديل كلاس active بين الأزرار المحدثة
+    document.querySelectorAll(".journey-step-btn").forEach((b, n) => b.classList.toggle("active", n === i));
     
-    // تحديث النصوص والوسوم داخل لوحة العرض الخاصة بالرحلة
-    document.getElementById("panelNo").textContent = String(i + 1).padStart(2, "0");
-    document.getElementById("panelEn").textContent = d.en;
-    document.getElementById("panelTitle").textContent = d.title;
-    document.getElementById("panelText").textContent = d.text;
-    document.getElementById("panelTags").innerHTML = d.tags.map(t => `<span>${t}</span>`).join("");
+    // تحديث النصوص والوسوم داخل لوحة العرض الخاصة بالرحلة مع حماية الهيكل البصري
+    const panelNo = document.getElementById("panelNo");
+    const panelEn = document.getElementById("panelEn");
+    const panelTitle = document.getElementById("panelTitle");
+    const panelText = document.getElementById("panelText");
+    const panelTags = document.getElementById("panelTags");
+
+    if (panelNo) panelNo.textContent = String(i + 1).padStart(2, "0");
+    if (panelEn) panelEn.textContent = d.en;
+    if (panelTitle) panelTitle.textContent = d.title;
+    if (panelText) panelText.textContent = d.text;
+    if (panelTags) panelTags.innerHTML = d.tags.map(t => `<span>${t}</span>`).join("");
 }
