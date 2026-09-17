@@ -487,3 +487,199 @@ button, input, textarea {
     margin-bottom: 24px;
     max-width: 700px;
 }
+/* ==========================================================================
+   تنسيقات صفحة رحلة ELORA التفاعلية ومخطط التدفق (Journey Page CSS)
+   ========================================================================== */
+/* تنظيم القسم التفاعلي للرحلة كـ Flexbox متوازن */
+.interactive-journey {
+    display: flex;
+    gap: 40px;
+    background: rgba(15, 32, 59, 0.3);
+    border: 1px solid rgba(244, 114, 182, 0.08);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    align-items: stretch;
+}
+
+/* الجانب الأيمن: أزرار المراحل والخطوات */
+.journey-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-left: 1px solid rgba(244, 114, 182, 0.1); /* خط فاصل عمودي جهة اليسار */
+    padding-left: 20px;
+}
+
+.journey-title {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #f472b6;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* تصميم الخطوات الفردية التي سيتم إنشاؤها بالـ JavaScript */
+#journeySteps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* تصميم الأزرار التفاعلية للمراحل عند توليدها */
+.journey-step-btn {
+    background: rgba(15, 32, 59, 0.5);
+    border: 1px solid rgba(244, 114, 182, 0.05);
+    padding: 16px 20px;
+    border-radius: 14px;
+    text-align: right;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    color: #cbd5e1;
+    transition: .3s ease;
+    width: 100%;
+}
+
+.journey-step-btn:hover, .journey-step-btn.active {
+    background: rgba(244, 114, 182, 0.15);
+    border-color: #f472b6;
+    color: #ffffff;
+    transform: translateX(-4px); /* حركة تفاعلية خفيفة لليمين */
+}
+
+/* الجانب الأيسر: لوحة عرض تفاصيل المرحلة النشطة */
+.journey-panel {
+    flex: 1.8;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* محاذاة كل المحتوى لليمين */
+    text-align: right;
+    position: relative;
+}
+
+/* الرقم الكبير للمرحلة */
+.panel-no {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(244, 114, 182, 0.2); /* لون بينك خافت جداً كخلفية */
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+/* المسمى الإنجليزي الفرعي للمرحلة */
+.panel-en {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    color: #f472b6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+/* العنوان الرئيسي للمرحلة */
+.journey-panel h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+/* نص شرح تفاصيل المرحلة */
+.journey-panel p {
+    font-size: 16px;
+    color: #cbd5e1;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+/* حاوية الكلمات الدلالية أو التاجات للمرحلة */
+.panel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* تصميم التاجات الفردية */
+.panel-tags span {
+    background: rgba(244, 114, 182, 0.1);
+    border: 1px solid rgba(244, 114, 182, 0.15);
+    color: #f472b6;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   تنسيق مخطط تدفق الأفعال (Action Flow) من اليمين إلى اليسار
+   ========================================================================== */
+.action-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15, 32, 59, 0.4);
+    border: 1px solid rgba(244, 114, 182, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    gap: 8px;
+    overflow-x: auto; /* للسماح بالتمرير الأفقي المريح في الشاشات الصغيرة */
+}
+
+/* الصناديق الفردية للمراحل (المشاهدة، المعرفة...) */
+.action-flow div {
+    background: rgba(10, 20, 36, 0.6);
+    border: 1px solid rgba(244, 114, 182, 0.1);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+    text-align: center;
+    flex: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* تنسيق الأسهم بين الصناديق لكي تشير لليسار باتجاه القراءة الصحيح */
+.action-flow i {
+    color: #f472b6;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 16px;
+    user-select: none;
+    padding: 0 4px;
+}
+
+/* ==========================================================================
+   تجاوب صفحة الرحلة مع الهواتف الذكية (Responsive Journey)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .interactive-journey {
+        flex-direction: column; /* تحويل العناصر عمودياً في الموبايل */
+        padding: 24px;
+        gap: 24px;
+    }
+    .journey-side {
+        border-left: none;
+        border-bottom: 1px solid rgba(244, 114, 182, 0.1); /* استبدال الفاصل ليكون أفقياً */
+        padding-left: 0;
+        padding-bottom: 20px;
+    }
+    .journey-panel {
+        text-align: center;
+        align-items: center;
+    }
+    .action-flow {
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 16px;
+    }
+}
