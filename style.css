@@ -8,19 +8,18 @@
 }
 
 html {
-    scroll-behavior: smooth; /* تمرير أصلي سلس */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Cairo', sans-serif;
     background: #0a1424; /* لون كحلي داكن عميق ومريح للعين */
-    color: #fce7f3;      /* كتابة بلون بينك ناعم ومريح جداً للقراءة */
+    color: #fce7f3;      /* كتابة بلون بينك ناعم ومريح للقراءة */
     line-height: 1.7;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* التوافق التام مع نمط التبديل */
 body.dark {
     background: #0a1424;
     color: #fce7f3;
@@ -32,9 +31,28 @@ a {
     transition: color 0.25s ease, transform 0.25s ease;
 }
 
-button, input, textarea {
+button {
     font: inherit;
     color: inherit;
+}
+
+/* التعديل المطلوب: جعل خط أي إدخال للمستخدم باللون الأسود بوضوح */
+input, textarea, select {
+    font: inherit;
+    color: #000000 !important; /* لون الخط أسود */
+    background-color: #ffffff !important; /* خلفية بيضاء لتباعد الألوان ووضوح الخط */
+    border: 2px solid rgba(244, 114, 182, 0.3);
+    padding: 12px;
+    border-radius: 12px;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #db2777;
+    box-shadow: 0 0 10px rgba(219, 39, 119, 0.2);
 }
 
 .container {
@@ -66,9 +84,9 @@ button, input, textarea {
     align-items: center;
     gap: 22px;
     padding: 10px 16px;
-    background: rgba(10, 20, 36, 0.85); /* كحلي مدمج بتأثير زجاجي */
+    background: rgba(10, 20, 36, 0.85);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(244, 114, 182, 0.15); /* إطار بينك شفاف */
+    border: 1px solid rgba(244, 114, 182, 0.15);
     border-radius: 22px;
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
 }
@@ -78,7 +96,7 @@ button, input, textarea {
     align-items: center;
     gap: 9px;
     font: 800 22px "Plus Jakarta Sans";
-    color: #f472b6; /* اسم البراند باللون البينك المضيء */
+    color: #f472b6;
     white-space: nowrap;
 }
 
@@ -88,7 +106,7 @@ button, input, textarea {
     border-radius: 13px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, #db2777, #f472b6); /* تدرج بينك فاخر */
+    background: linear-gradient(135deg, #db2777, #f472b6);
     color: #fff;
     box-shadow: 0 8px 24px rgba(219, 39, 119, 0.35);
 }
@@ -105,7 +123,7 @@ button, input, textarea {
     border-radius: 11px;
     font-size: 13px;
     font-weight: 700;
-    color: #fbcfe8; /* درجات بينك ناعمة */
+    color: #fbcfe8;
     transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -132,6 +150,7 @@ button, input, textarea {
     place-items: center;
     transition: .3s;
 }
+
 .icon-btn:hover {
     background: rgba(244, 114, 182, 0.1);
 }
@@ -158,7 +177,7 @@ button, input, textarea {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #db2777, #ec4899); /* أزرار أساسية باللون الوردي */
+    background: linear-gradient(135deg, #db2777, #ec4899);
     color: #fff;
     box-shadow: 0 10px 28px rgba(219, 39, 119, 0.3);
 }
@@ -173,6 +192,7 @@ button, input, textarea {
     border-color: rgba(244, 114, 182, 0.2);
     color: #f472b6;
 }
+
 .btn-ghost:hover {
     background: rgba(244, 114, 182, 0.15);
     transform: translateY(-2px);
@@ -183,6 +203,7 @@ button, input, textarea {
     color: #db2777;
     border: 1px solid rgba(219, 39, 119, 0.2);
 }
+
 .btn-white:hover {
     background: #fbcfe8;
     transform: translateY(-2px);
@@ -192,12 +213,12 @@ button, input, textarea {
    4. أقسام الموقع والهيرو (Sections & Hero)
    ========================================================================== */
 .section {
-    padding: 110px 0;
+    padding: 100px 0;
 }
 
 .page-hero {
-    padding-top: 175px; 
-    padding-bottom: 75px;
+    padding-top: 160px; 
+    padding-bottom: 60px;
     text-align: center;
 }
 
@@ -230,80 +251,32 @@ button, input, textarea {
     letter-spacing: 1px;
 }
 
-.eyebrow i {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #f472b6;
-}
-
-.eyebrow.plain { background: transparent; padding: 0; margin-bottom: 12px; }
-.eyebrow.light { background: rgba(255, 255, 255, 0.08); color: #fbcfe8; }
-
 .hero h1, .page-hero h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.25;
-    letter-spacing: -0.5px;
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.3;
     font-weight: 900;
-    margin: 22px 0;
+    margin: 20px 0;
     color: #ffffff;
 }
 
-.hero h1 span, .page-hero h1 span, .cta-content h2 span {
-    color: #f472b6; /* الكلمات الهامة باللون البينك الجذاب */
+.hero h1 span, .page-hero h1 span {
+    color: #f472b6;
 }
 
 .hero p, .page-hero p {
-    max-width: 590px;
-    color: #cbd5e1; /* تباين مريح جداً ونظيف للنصوص */
+    max-width: 600px;
+    color: #cbd5e1;
     font-size: 16px;
-    line-height: 2;
-    margin: 0 auto 28px;
+    line-height: 1.8;
+    margin: 0 auto 24px;
 }
 
-/* الإحصائيات الفنية والديكور الحركي */
 .mini-stats { display: flex; gap: 30px; margin-top: 38px; }
-.mini-stats div { display: flex; flex-direction: column; }
 .mini-stats strong { font: 800 21px "Plus Jakarta Sans"; color: #f472b6; }
-.mini-stats span { font-size: 11px; color: #94a3b8; }
-
-.hero-art { min-height: 500px; display: grid; place-items: center; position: relative; }
-.hero-glow { position: absolute; width: 390px; height: 390px; border-radius: 50%; background: radial-gradient(circle, rgba(244, 114, 182, 0.12) 0%, transparent 70%); }
-.orbit { position: absolute; border: 2px dashed rgba(244, 114, 182, 0.15); border-radius: 50%; animation: spin 25s linear infinite; }
-.orbit-a { width: 280px; height: 280px; }
-.orbit-b { width: 420px; height: 420px; animation-direction: reverse; animation-duration: 35s; }
-
-.student-orb {
-    position: relative;
-    width: 170px;
-    height: 215px;
-    border-radius: 90px 90px 45px 45px;
-    background: linear-gradient(145deg, #db2777, #f472b6);
-    z-index: 2;
-    box-shadow: 0 30px 65px rgba(219, 39, 119, 0.3);
-}
-
-.floating-pill {
-    position: absolute;
-    z-index: 4;
-    background: rgba(10, 20, 36, 0.9);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(244, 114, 182, 0.25);
-    padding: 12px 15px;
-    border-radius: 16px;
-    font-size: 11px;
-    font-weight: 800;
-    color: #fce7f3;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-    animation: float 5s ease-in-out infinite;
-}
-.pill-1 { top: 40px; right: 5px; }
-.pill-2 { bottom: 100px; left: 0; animation-delay: -1.5s; }
-.pill-3 { bottom: 20px; right: 80px; animation-delay: -3s; }
-.pill-4 { top: 145px; left: 20px; animation-delay: -4s; }
+.mini-stats span { font-size: 11px; color: #94a3b8; margin-right: 5px; }
 
 /* ==========================================================================
-   5. الكروت الزجاجية والبطاقات ومحاذاة المربعات المتناسقة
+   5. الكروت والشبكات وتنسيق الصفحات التفاعلية
    ========================================================================== */
 .section-soft { 
     background: linear-gradient(135deg, #070d18, #0a1424); 
@@ -311,466 +284,106 @@ button, input, textarea {
     border-bottom: 1px solid rgba(244, 114, 182, 0.08);
 }
 
-.section-heading { 
-    text-align: center; 
-    margin-bottom: 56px; 
-}
+.section-heading { text-align: center; margin-bottom: 48px; }
+.section-heading h2 { font-size: clamp(28px, 4vw, 38px); color: #fff; margin-bottom: 12px; }
+.section-heading p { color: #94a3b8; font-size: 15px; }
 
-.section-heading h2 { 
-    font-size: clamp(30px, 4vw, 42px); 
-    line-height: 1.3; 
-    margin: 12px 0; 
-    color: #fff; 
-    font-weight: 800;
-}
-
-.section-heading p { 
-    color: #94a3b8; 
-    font-size: 15px;
-}
-
-/* توزيع متناسق وشبكي للمربعات بصفحة الفرص */
-.opportunity-grid { 
+/* شبكات العرض المتناسقة للفرص والمسارات */
+.opportunity-grid, .detailed-tracks, .explore-grid { 
     display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 32px; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 24px; 
     padding: 10px 0;
 }
 
-/* الكروت الزجاجية والبطاقات المتكاملة والمحاذاة للخطوط والمربعات */
-.glass-card, .track-card, .detail-card, .opportunity-card {
+.glass-card, .track-card, .detail-card, .opportunity-card, .explore-option {
     background: rgba(15, 32, 59, 0.4); 
     border: 1px solid rgba(244, 114, 182, 0.08);
-    border-radius: 24px;
-    padding: 38px 32px; /* مسافات داخلية واسعة لمنع التصاق الحواف */
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* محاذاة لليمين بانتظام في الـ RTL */
-    text-align: right;       /* محاذاة الخطوط العربية */
-    position: relative;
-    transition: .35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover, .track-card:hover, .detail-card:hover, .opportunity-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(244, 114, 182, 0.35);
-    background: rgba(21, 41, 74, 0.7);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* العناوين والفقرات بداخل الكروت الزجاجية والمربعات */
-.glass-card h3, .track-card h3 { 
-    font-size: 20px; 
-    color: #ffffff; 
-    margin-bottom: 8px; 
-    font-weight: 700;
-}
-
-.glass-card p, .track-card p, .detail-card p, .opportunity-card p { 
-    color: #cbd5e1; 
-    font-size: 13px; 
-    line-height: 1.9; 
-    margin-bottom: 18px; 
-}
-
-.opportunity-card p {
-    font-size: 15px; /* تكبير خط الشرح في كروت الفرص لزيادة التناسق */
-    flex-grow: 1;   /* تساوي أطوال المربعات تلقائياً */
-}
-
-/* الأرقام الترتيبية (01, 02) */
-.opportunity-card > span {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-    color: #f472b6;
-    letter-spacing: 0.5px;
-/* ==========================================================================
-   تنسيقات صفحة استكشف (Explore Platform CSS)
-   ========================================================================== */
-/* تنظيم شبكة خيارات الاستكشاف */
-.explore-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* خيارين بجانب بعض متناسقين تماماً */
-    gap: 24px;
-    margin-bottom: 48px;
-}
-
-/* تصميم المربعات والأزرار التفاعلية للاستكشاف */
-.explore-option {
-    background: rgba(15, 32, 59, 0.4);
-    border: 1px solid rgba(244, 114, 182, 0.08);
     border-radius: 20px;
-    padding: 28px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* محاذاة لليمين بانتظام */
+    align-items: flex-start;
     text-align: right;
-    cursor: pointer;
-    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: .3s ease;
 }
 
-.explore-option:hover {
-    transform: translateY(-4px);
-    border-color: rgba(244, 114, 182, 0.25);
+.glass-card:hover, .track-card:hover, .detail-card:hover, .opportunity-card:hover, .explore-option:hover {
+    transform: translateY(-5px);
+    border-color: rgba(244, 114, 182, 0.3);
     background: rgba(21, 41, 74, 0.6);
 }
 
-/* حالة الزر النشط (المختار حالياً) */
-.explore-option.active {
-    background: rgba(244, 114, 182, 0.1);
-    border-color: #f472b6;
-    box-shadow: 0 10px 30px rgba(244, 114, 182, 0.15);
+/* فورم التواصل المتناسق */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    align-items: start;
 }
 
-/* الأيقونات الرمزية الفاخرة بداخل المربعات */
-.explore-option b {
-    font-size: 20px;
-    color: #f472b6;
+.contact-form label {
     display: block;
-    margin-bottom: 12px;
-}
-
-/* عناوين خيارات الاستكشاف */
-.explore-option strong {
-    font-size: 18px;
     font-weight: 700;
-    color: #ffffff;
-    display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    color: #fbcfe8;
 }
 
-/* الشروحات الفرعية (الاهتمامات • القوة • المهارات) */
-.explore-option span {
-    font-size: 13px;
-    color: #94a3b8;
-}
-
-/* لوحة وصندوق عرض مخرجات النتائج (Explore Output Box) */
-.explore-output {
-    background: linear-gradient(145deg, rgba(21, 41, 74, 0.7), rgba(15, 32, 59, 0.4));
-    border: 1px solid rgba(244, 114, 182, 0.15);
-    border-radius: 24px;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 80px 1fr; /* مسافة مخصصة للأيقونة والجانب الآخر للنصوص */
-    gap: 32px;
-    align-items: center;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-/* دائرة الأيقونة الرئيسية بداخل لوحة المخرجات */
-.output-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: rgba(244, 114, 182, 0.15);
-    color: #f472b6;
-    display: grid;
-    place-items: center;
-    font-size: 28px;
-    box-shadow: 0 8px 24px rgba(244, 114, 182, 0.1);
-}
-
-.explore-output h2 {
-    font-size: 28px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 12px;
-}
-
-.explore-output p {
-    font-size: 16px;
-    color: #cbd5e1;
-    line-height: 1.8;
-    margin-bottom: 24px;
-    max-width: 700px;
-}
-/* ==========================================================================
-   تنسيقات صفحة رحلة ELORA التفاعلية ومخطط التدفق (Journey Page CSS)
-   ========================================================================== */
-/* تنظيم القسم التفاعلي للرحلة كـ Flexbox متوازن */
+/* المخطط الانسيابي للرحلة والمراحل */
 .interactive-journey {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     background: rgba(15, 32, 59, 0.3);
     border: 1px solid rgba(244, 114, 182, 0.08);
-    border-radius: 28px;
-    padding: 40px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    align-items: stretch;
+    border-radius: 24px;
+    padding: 30px;
 }
 
-/* الجانب الأيمن: أزرار المراحل والخطوات */
-.journey-side {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    border-left: 1px solid rgba(244, 114, 182, 0.1); /* خط فاصل عمودي جهة اليسار */
-    padding-left: 20px;
-}
+.journey-side { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.journey-panel { flex: 2; padding: 10px; text-align: right; }
 
-.journey-title {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-    color: #f472b6;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-}
-
-/* تصميم الخطوات الفردية التي سيتم إنشاؤها بالـ JavaScript */
-#journeySteps {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* تصميم الأزرار التفاعلية للمراحل عند توليدها */
-.journey-step-btn {
-    background: rgba(15, 32, 59, 0.5);
-    border: 1px solid rgba(244, 114, 182, 0.05);
-    padding: 16px 20px;
-    border-radius: 14px;
-    text-align: right;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 700;
-    color: #cbd5e1;
-    transition: .3s ease;
-    width: 100%;
-}
-
-.journey-step-btn:hover, .journey-step-btn.active {
-    background: rgba(244, 114, 182, 0.15);
-    border-color: #f472b6;
-    color: #ffffff;
-    transform: translateX(-4px); /* حركة تفاعلية خفيفة لليمين */
-}
-
-/* الجانب الأيسر: لوحة عرض تفاصيل المرحلة النشطة */
-.journey-panel {
-    flex: 1.8;
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* محاذاة كل المحتوى لليمين */
-    text-align: right;
-    position: relative;
-}
-
-/* الرقم الكبير للمرحلة */
-.panel-no {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 48px;
-    font-weight: 900;
-    color: rgba(244, 114, 182, 0.2); /* لون بينك خافت جداً كخلفية */
-    line-height: 1;
-    margin-bottom: 8px;
-}
-
-/* المسمى الإنجليزي الفرعي للمرحلة */
-.panel-en {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-    color: #f472b6;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-/* العنوان الرئيسي للمرحلة */
-.journey-panel h2 {
-    font-size: 32px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 16px;
-}
-
-/* نص شرح تفاصيل المرحلة */
-.journey-panel p {
-    font-size: 16px;
-    color: #cbd5e1;
-    line-height: 1.9;
-    margin-bottom: 28px;
-}
-
-/* حاوية الكلمات الدلالية أو التاجات للمرحلة */
-.panel-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: auto;
-}
-
-/* تصميم التاجات الفردية */
-.panel-tags span {
-    background: rgba(244, 114, 182, 0.1);
-    border: 1px solid rgba(244, 114, 182, 0.15);
-    color: #f472b6;
-    padding: 6px 14px;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   تنسيق مخطط تدفق الأفعال (Action Flow) من اليمين إلى اليسار
-   ========================================================================== */
 .action-flow {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 12px;
     background: rgba(15, 32, 59, 0.4);
-    border: 1px solid rgba(244, 114, 182, 0.08);
-    border-radius: 20px;
-    padding: 24px;
-    gap: 8px;
-    overflow-x: auto; /* للسماح بالتمرير الأفقي المريح في الشاشات الصغيرة */
+    padding: 20px;
+    border-radius: 16px;
+    overflow-x: auto;
 }
 
-/* الصناديق الفردية للمراحل (المشاهدة، المعرفة...) */
 .action-flow div {
     background: rgba(10, 20, 36, 0.6);
-    border: 1px solid rgba(244, 114, 182, 0.1);
-    padding: 12px 20px;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 10px;
     white-space: nowrap;
-    text-align: center;
-    flex: 1;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* تنسيق الأسهم بين الصناديق لكي تشير لليسار باتجاه القراءة الصحيح */
-.action-flow i {
-    color: #f472b6;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 16px;
-    user-select: none;
-    padding: 0 4px;
-}
-
-/* ==========================================================================
-   تجاوب صفحة الرحلة مع الهواتف الذكية (Responsive Journey)
-   ========================================================================== */
+/* الشاشات الصغيرة */
 @media (max-width: 768px) {
-    .interactive-journey {
-        flex-direction: column; /* تحويل العناصر عمودياً في الموبايل */
-        padding: 24px;
-        gap: 24px;
+    .hero-grid, .interactive-journey, .contact-grid {
+        grid-template-columns: 1fr;
+        flex-direction: column;
     }
-    .journey-side {
-        border-left: none;
-        border-bottom: 1px solid rgba(244, 114, 182, 0.1); /* استبدال الفاصل ليكون أفقياً */
-        padding-left: 0;
-        padding-bottom: 20px;
-    }
-    .journey-panel {
-        text-align: center;
-        align-items: center;
-    }
-    .action-flow {
-        justify-content: flex-start;
-        gap: 12px;
-        padding: 16px;
-    }
+    .section { padding: 60px 0; }
 }
+
 /* ==========================================================================
-   تنسيقات صفحة المسارات الأربعة والبطاقات التفصيلية (Tracks Page CSS)
+   6. الفوتر (Footer)
    ========================================================================== */
-/* تنظيم شبكة المسارات التفصيلية */
-.detailed-tracks {
+.footer {
+    background: #060b14;
+    padding: 60px 0 20px;
+    border-top: 1px solid rgba(244, 114, 182, 0.1);
+    margin-top: 60px;
+}
+.footer-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* بطاقتين بجانب بعض بدقة وثبات */
-    gap: 32px;
-    padding: 10px 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
 }
-
-/* التنسيق العلوي لداخل البطاقة (الرقم والأيقونة) */
-.detail-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-/* الرقم الترتيبي للمسار */
-.detail-top > span {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 800;
-    color: #f472b6;
-    letter-spacing: 0.5px;
-}
-
-/* تحسين صندوق الأيقونة بداخل بطاقة المسار التفصيلية */
-.detail-card .icon-box {
-    margin: 0; /* إلغاء الهوامش السابقة لتتناسب مع التصميم الجديد */
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-}
-
-/* العناوين الفرعية للمسارات */
-.detail-card h3 {
-    font-size: 16px;
-    color: #fbcfe8; /* لون زهري ناعم ومميز */
-    font-weight: 600;
-    margin-bottom: 14px;
-}
-
-/* حاوية التاجات بداخل المسار */
-.tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-}
-
-/* التاجات الفردية */
-.tag-list span {
-    background: rgba(244, 114, 182, 0.06);
-    border: 1px solid rgba(244, 114, 182, 0.12);
-    color: #f472b6;
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-/* مظهر خط التدفق الإرشادي أسفل كل مسار (Flow Line) */
-.flow-line {
-    background: rgba(10, 20, 36, 0.4);
-    border: 1px solid rgba(244, 114, 182, 0.08);
-    padding: 12px 16px;
-    border-radius: 12px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #ffffff;
-    width: 100%;
-    line-height: 1.6;
-    margin-top: auto; /* يدفع صندوق التدفق ليكون دائماً ملتصقاً بأسفل البطاقة */
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* ==========================================================================
-   تجاوب صفحة المسارات مع الهواتف الذكية (Responsive Tracks)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .detailed-tracks {
-        grid-template-columns: 1fr; /* مسار واحد ممتد عمودياً على الهواتف */
-        gap: 24px;
-    }
-    .detail-card {
-        padding: 32px 24px; /* تقليل المسافات الداخلية قليلاً على الهواتف */
-    }
-}
+.footer h4 { color: #f472b6; margin-bottom: 16px; font-size: 16px; }
+.footer a { display: block; margin-bottom: 10px; color: #94a3b8; font-size: 14px; }
+.footer a:hover { color: #f472b6; }
+.copyright { text-align: center; color: #64748b; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
