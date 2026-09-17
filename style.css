@@ -386,3 +386,104 @@ button, input, textarea {
     font-weight: 800;
     color: #f472b6;
     letter-spacing: 0.5px;
+/* ==========================================================================
+   تنسيقات صفحة استكشف (Explore Platform CSS)
+   ========================================================================== */
+/* تنظيم شبكة خيارات الاستكشاف */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* خيارين بجانب بعض متناسقين تماماً */
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+/* تصميم المربعات والأزرار التفاعلية للاستكشاف */
+.explore-option {
+    background: rgba(15, 32, 59, 0.4);
+    border: 1px solid rgba(244, 114, 182, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* محاذاة لليمين بانتظام */
+    text-align: right;
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explore-option:hover {
+    transform: translateY(-4px);
+    border-color: rgba(244, 114, 182, 0.25);
+    background: rgba(21, 41, 74, 0.6);
+}
+
+/* حالة الزر النشط (المختار حالياً) */
+.explore-option.active {
+    background: rgba(244, 114, 182, 0.1);
+    border-color: #f472b6;
+    box-shadow: 0 10px 30px rgba(244, 114, 182, 0.15);
+}
+
+/* الأيقونات الرمزية الفاخرة بداخل المربعات */
+.explore-option b {
+    font-size: 20px;
+    color: #f472b6;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* عناوين خيارات الاستكشاف */
+.explore-option strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* الشروحات الفرعية (الاهتمامات • القوة • المهارات) */
+.explore-option span {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* لوحة وصندوق عرض مخرجات النتائج (Explore Output Box) */
+.explore-output {
+    background: linear-gradient(145deg, rgba(21, 41, 74, 0.7), rgba(15, 32, 59, 0.4));
+    border: 1px solid rgba(244, 114, 182, 0.15);
+    border-radius: 24px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 80px 1fr; /* مسافة مخصصة للأيقونة والجانب الآخر للنصوص */
+    gap: 32px;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* دائرة الأيقونة الرئيسية بداخل لوحة المخرجات */
+.output-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(244, 114, 182, 0.15);
+    color: #f472b6;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    box-shadow: 0 8px 24px rgba(244, 114, 182, 0.1);
+}
+
+.explore-output h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.explore-output p {
+    font-size: 16px;
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    max-width: 700px;
+}
