@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>استكشف | ELORA</title>
-<link rel="preconnect" href="https://googleapis.com"><link rel="preconnect" href="https://gstatic.com" crossorigin><link href="https://googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"></head>
-<body><header class="site-header"><nav class="nav container"><a class="brand" href="index.html"><span class="brand-mark">E</span>ELORA</a><button class="menu-toggle" id="menuToggle">☰</button><div class="nav-links" id="navLinks"><a href="index.html">الرئيسية</a><a href="about.html">عن ELORA</a><a href="tracks.html">المسارات</a><a href="journey.html">رحلة ELORA</a><a class="active" href="explore.html">استكشف</a><a href="opportunities.html">الفرص</a><a href="contact.html">تواصل معنا</a></div><div class="nav-actions"><button class="icon-btn" id="themeToggle">☾</button><a class="btn btn-primary desktop-cta" href="journey.html">ابدأ رحلتك</a></div></nav></header>
-<main><section class="page-hero section"><div class="container narrow reveal"><span class="eyebrow">EXPLORE</span><h1>ماذا تريد أن <span>تستكشف؟</span></h1><p>اختر السؤال الأقرب إليك، وستظهر لك نقطة بداية داخل ELORA.</p></div></section>
-<section class="section"><div class="container"><div class="explore-grid"><button class="explore-option active reveal" data-type="self"><b>✦</b><strong>أريد أن أكتشف نفسي</strong><span>الاهتمامات • القوة • المهارات</span></button><button class="explore-option reveal" data-type="fields"><b>◇</b><strong>أريد استكشاف المجالات</strong><span>تخصصات • مهارات • تجارب</span></button><button class="explore-option reveal" data-type="problems"><b>◎</b><strong>أريد فهم المشكلات من حولي</strong><span>أسباب • آثار • حلول</span></button><button class="explore-option reveal" data-type="world"><b>◉</b><strong>أريد فهم العالم</strong><span>حالات • قرارات • نتائج</span></button></div><div class="explore-output reveal"><div class="output-icon" id="outputIcon">✦</div><div><span class="eyebrow plain">YOUR STARTING POINT</span><h2 id="outputTitle">ابدأ من نفسك</h2><p id="outputText">تعرّف على اهتماماتك ونقاط قوتك والمهارات التي تريد تطويرها، ثم ابنِ الأسئلة التي ستقود رحلتك.</p><a class="btn btn-primary" href="journey.html">انتقل إلى الرحلة</a></div></div></div></section></main>
-<footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark">E</span>ELORA</a><p>اكتشف نفسك. استكشف مجالك. افهم عالمك.</p></div><div><h4>استكشف</h4><a href="journey.html">رحلة ELORA</a><a href="tracks.html">المسارات</a></div><div><h4>المزيد</h4><a href="opportunities.html">الفرص</a><a href="contact.html">تواصل معنا</a></div></div><div class="container copyright">© 2026 ELORA</div></footer>
-<script src="main.js"></script><script src="explore.js"></script></body></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استكشف | ELORA</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a class="brand" href="index.html"><span class="brand-mark">E</span>ELORA</a>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">عن ELORA</a>
+                <a href="tracks.html">المسارات</a>
+                <a href="journey.html">رحلة ELORA</a>
+                <a class="active" href="explore.html">استكشف</a>
+                <a href="opportunities.html">الفرص</a>
+                <a href="contact.html">تواصل معنا</a>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-btn" id="themeToggle">☾</button>
+                <a class="btn btn-primary desktop-cta" href="journey.html">ابدأ رحلتك</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero section">
+            <div class="container narrow">
+                <span class="eyebrow">EXPLORE</span>
+                <h1>ماذا تريد أن <span>تستكشف؟</span></h1>
+                <p>اختر السؤال الأقرب إليك، وستظهر لك نقطة بداية داخل ELORA.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="explore-grid">
+                    <button class="explore-option" data-type="self">
+                        <b>✦</b><strong>أريد أن أكتشف نفسي</strong>
+                        <span>الاهتمامات • القوة • المهارات</span>
+                    </button>
+                    <button class="explore-option" data-type="fields">
+                        <b>◇</b><strong>أريد استكشاف المجالات</strong>
+                        <span>تخصصات • مهارات • تجارب</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container copyright">© 2026 ELORA — جميع الحقوق محفوظة</div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="explore.js"></script>
+</body>
+</html>
