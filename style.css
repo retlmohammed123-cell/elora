@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ELORA - المظهر الداكن الفاخر والمريح للعين (الإصدار المستقر النهائي)
+   ELORA - المظهر الكحلي الفاخر المدمج باللون البينك العصري (نسخة فائقة السلاسة)
    ========================================================================== */
 
 /* إعادة التعيين والخصائص العامة */
@@ -15,17 +15,18 @@ html {
 
 body {
     font-family: 'Cairo', Arial, sans-serif;
-    background-color: #07101f; /* خلفية داكنة عميقة ومريحة */
-    color: #edf4ff;            /* نص أساسي أبيض ناعم يمنع إجهاد العين */
+    background-color: #070d19; /* خلفية كحلي عميقة جداً ومريحة للعين */
+    color: #f8f9fa;            /* نص أساسي ناصع وناعم */
     line-height: 1.7;
     overflow-x: hidden;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
+    direction: rtl;            /* دعم التصفح العربي المتوافق مع خط Cairo */
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.2s ease;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button, input, textarea {
@@ -55,12 +56,13 @@ button, input, textarea {
     align-items: center;
     gap: 22px;
     padding: 10px 16px;
-    background: rgba(13, 27, 49, 0.85); /* تأثير زجاجي داكن */
+    background: rgba(11, 19, 41, 0.8); /* تأثير زجاجي باللون الكحلي */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 121, 198, 0.15); /* حدود بلمسة بينك خفيفة */
     border-radius: 22px;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
 .brand {
@@ -68,7 +70,7 @@ button, input, textarea {
     align-items: center;
     gap: 9px;
     font: 800 22px "Plus Jakarta Sans", sans-serif;
-    color: #3b82f6; /* أزرق براند مضيء */
+    color: #ff79c6; /* لون براند بينك مضيء */
     white-space: nowrap;
 }
 
@@ -78,10 +80,10 @@ button, input, textarea {
     border-radius: 13px;
     display: grid;
     place-items: center;
-    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    background: linear-gradient(135deg, #bd93f9, #ff79c6); /* تدرج بينك وبنفسجي فاخر */
     color: #fff;
     font-weight: 800;
-    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.4);
+    box-shadow: 0 8px 24px rgba(255, 121, 198, 0.4);
 }
 
 .nav-links {
@@ -96,13 +98,14 @@ button, input, textarea {
     border-radius: 11px;
     font-size: 14px;
     font-weight: 700;
-    color: #a7b6ca; /* لون رمادي أزرق هادئ للنصوص غير النشطة */
+    color: #a2adb8; /* كحلي رمادي هادئ للعناصر غير النشطة */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-links a:hover, 
 .nav-links a.active {
-    background: rgba(59, 130, 246, 0.15);
-    color: #3b82f6;
+    background: rgba(255, 121, 198, 0.12); /* تأثير خلفية بينك ناعم */
+    color: #ff79c6;
 }
 
 .nav-actions {
@@ -114,21 +117,27 @@ button, input, textarea {
 .icon-btn, .menu-toggle {
     width: 40px;
     height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 121, 198, 0.2);
     background: transparent;
     border-radius: 12px;
     cursor: pointer;
-    color: #edf4ff;
+    color: #ff79c6;
     display: grid;
     place-items: center;
     font-size: 18px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-btn:hover {
+    background: rgba(255, 121, 198, 0.15);
+    transform: scale(1.05);
 }
 
 .menu-toggle {
     display: none;
 }
 
-/* الأزرار العصرية */
+/* الأزرار العصرية الفائقة السلاسة */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -140,38 +149,41 @@ button, input, textarea {
     font-weight: 800;
     border: 1px solid transparent;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                background-color 0.3s ease;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    background: linear-gradient(135deg, #e14eca, #ff79c6); /* تدرج بينك غني */
     color: #fff;
-    box-shadow: 0 10px 28px rgba(29, 78, 216, 0.3);
+    box-shadow: 0 10px 28px rgba(255, 121, 198, 0.3);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(29, 78, 216, 0.5);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 121, 198, 0.5);
 }
 
 .btn-ghost {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #edf4ff;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 121, 198, 0.2);
+    color: #ff92df;
 }
 
 .btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(59, 130, 246, 0.4);
+    background: rgba(255, 121, 198, 0.1);
+    border-color: #ff79c6;
+    transform: translateY(-2px);
 }
 
 .btn-white {
     background: #ffffff;
-    color: #1d4ed8;
+    color: #e14eca;
 }
 
 .btn-white:hover {
-    background: #eaf2ff;
+    background: #fff0fa;
     transform: translateY(-2px);
 }
 
@@ -185,7 +197,7 @@ button, input, textarea {
     padding-top: 145px;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at 15% 20%, rgba(29, 78, 216, 0.12), transparent 45%), #07101f;
+    background: radial-gradient(circle at 15% 20%, rgba(255, 121, 198, 0.08), transparent 50%), #070d19;
 }
 
 .hero-grid {
@@ -201,8 +213,8 @@ button, input, textarea {
     gap: 8px;
     padding: 7px 14px;
     border-radius: 50px;
-    background: rgba(59, 130, 246, 0.15);
-    color: #3b82f6;
+    background: rgba(255, 121, 198, 0.15);
+    color: #ff79c6;
     font-size: 12px;
     font-weight: 800;
 }
@@ -211,7 +223,7 @@ button, input, textarea {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #3b82f6;
+    background: #ff79c6;
 }
 
 .eyebrow.plain {
@@ -221,7 +233,7 @@ button, input, textarea {
 
 .eyebrow.light {
     background: rgba(255, 255, 255, 0.08);
-    color: #dbe9ff;
+    color: #ffd2f1;
 }
 
 .hero h1, .page-hero h1 {
@@ -234,18 +246,18 @@ button, input, textarea {
 }
 
 .hero h1 span, .page-hero h1 span, .cta-content h2 span {
-    color: #3b82f6;
+    color: #ff79c6; /* نصوص مميزة باللون البينك */
 }
 
 .hero p, .page-hero p {
     max-width: 590px;
-    color: #94a3b8; /* رمادي مائل للأزرق يعطي أفضل تباين مريح للقراءة */
+    color: #a2adb8; /* لون مريح جداً للقراءة على الخلفية الكحلي */
     font-size: 16px;
     line-height: 2;
     margin-bottom: 28px;
 }
 
-/* الإحصائيات الفنية والأرت */
+/* الإحصائيات الفنية */
 .mini-stats {
     display: flex;
     gap: 35px;
@@ -259,12 +271,12 @@ button, input, textarea {
 
 .mini-stats strong {
     font: 800 24px "Plus Jakarta Sans", sans-serif;
-    color: #3b82f6;
+    color: #ff79c6;
 }
 
 .mini-stats span {
     font-size: 12px;
-    color: #64748b;
+    color: #6c7d93;
 }
 
 .hero-art {
@@ -279,12 +291,12 @@ button, input, textarea {
     width: 390px;
     height: 390px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 121, 198, 0.12) 0%, transparent 70%);
 }
 
 .orbit {
     position: absolute;
-    border: 2px dashed rgba(59, 130, 246, 0.15);
+    border: 2px dashed rgba(255, 121, 198, 0.15);
     border-radius: 50%;
     animation: spin 25s linear infinite;
 }
@@ -297,35 +309,35 @@ button, input, textarea {
     width: 170px;
     height: 215px;
     border-radius: 90px 90px 45px 45px;
-    background: linear-gradient(145deg, #1d4ed8, #3b82f6);
+    background: linear-gradient(145deg, #e14eca, #ff79c6);
     z-index: 2;
-    box-shadow: 0 30px 65px rgba(29, 78, 216, 0.35);
+    box-shadow: 0 30px 65px rgba(255, 121, 198, 0.35);
 }
 
 .floating-pill {
     position: absolute;
     z-index: 4;
-    background: rgba(15, 23, 42, 0.85);
+    background: rgba(11, 19, 41, 0.85); /* كحلي زجاجي */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(255, 121, 198, 0.25);
     padding: 12px 18px;
     border-radius: 16px;
     font-size: 12px;
     font-weight: 800;
-    color: #edf4ff;
+    color: #ffd2f1;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     animation: float 6s ease-in-out infinite;
 }
 
-.pill-1 { top: 40px; right: 5px; }
-.pill-2 { bottom: 100px; left: 0; animation-delay: -1.5s; }
-.pill-3 { bottom: 20px; right: 80px; animation-delay: -3s; }
-.pill-4 { top: 145px; left: 20px; animation-delay: -4.5s; }
+.pill-1 { top: 40px; left: 5px; }
+.pill-2 { bottom: 100px; right: 0; animation-delay: -1.5s; }
+.pill-3 { bottom: 20px; left: 80px; animation-delay: -3s; }
+.pill-4 { top: 145px; right: 20px; animation-delay: -4.5s; }
 
 /* السيكشن الفرعي والبطاقات الزجاجية الداكنة */
 .section-soft {
-    background: linear-gradient(135deg, #091325, #07101f);
+    background: linear-gradient(135deg, #0b1329, #070d19); /* تدرج كحلي فاخر */
 }
 
 .section-heading {
@@ -341,7 +353,7 @@ button, input, textarea {
 }
 
 .section-heading p {
-    color: #94a3b8;
+    color: #a2adb8;
 }
 
 .row-heading {
@@ -352,13 +364,13 @@ button, input, textarea {
 }
 
 .text-link {
-    color: #3b82f6;
+    color: #ff79c6;
     font-size: 14px;
     font-weight: 700;
 }
 
 .text-link:hover {
-    color: #60a5fa;
+    color: #ff92df;
 }
 
 .idea-grid {
@@ -367,30 +379,35 @@ button, input, textarea {
     gap: 18px;
 }
 
+/* بطاقات بتأثير حركي مطاطي وسلس للغاية */
 .glass-card, .track-card, .detail-card, .opportunity-card {
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(11, 19, 41, 0.5); /* كحلي شفاف */
+    border: 1px solid rgba(255, 121, 198, 0.06);
     border-radius: 25px;
     padding: 28px;
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.25);
-    transition: transform 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                background-color 0.4s ease,
+                box-shadow 0.4s ease;
 }
 
 .glass-card:hover, .track-card:hover, .detail-card:hover, .opportunity-card:hover {
-    transform: translateY(-7px);
-    border-color: rgba(59, 130, 246, 0.4);
-    background: rgba(22, 32, 54, 0.8);
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(255, 121, 198, 0.4);
+    background: rgba(18, 30, 61, 0.85); /* كحلي أكثر وضوحاً عند الحوّم */
+    box-shadow: 0 22px 60px rgba(255, 121, 198, 0.1);
 }
 
 .big-card { grid-row: span 2; min-height: 300px; }
-.card-index, .track-no { font: 800 12px "Plus Jakarta Sans", sans-serif; color: #3b82f6; }
+.card-index, .track-no { font: 800 12px "Plus Jakarta Sans", sans-serif; color: #ff79c6; }
 
 .icon-box {
     width: 52px;
     height: 52px;
     border-radius: 17px;
-    background: rgba(59, 130, 246, 0.12);
-    color: #3b82f6;
+    background: rgba(255, 121, 198, 0.12);
+    color: #ff79c6;
     display: grid;
     place-items: center;
     font-size: 22px;
@@ -404,7 +421,7 @@ button, input, textarea {
 }
 
 .glass-card p, .track-card p, .detail-card p, .opportunity-card p {
-    color: #94a3b8;
+    color: #a2adb8;
     font-size: 14px;
     line-height: 1.9;
     margin-bottom: 18px;
@@ -422,43 +439,11 @@ button, input, textarea {
 .track-footer {
     position: absolute;
     bottom: 25px;
-    right: 28px;
-    color: #475569;
+    left: 28px;
+    color: #5d6d82;
     font: 700 10px "Plus Jakarta Sans", sans-serif;
 }
 
 /* البانر والفوتر */
 .cta-band {
     margin: 0 auto 110px;
-    width: min(1160px, 92%);
-    border-radius: 40px;
-    background: linear-gradient(135deg, #0f172a, #1e3a8a, #1d4ed8);
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.cta-content { padding: 80px 20px; }
-.cta-content h2 { font-size: clamp(31px, 4vw, 52px); line-height: 1.45; margin: 18px 0; }
-.cta-content h2 span { color: #93c5fd; }
-.cta-content p { max-width: 650px; margin: 0 auto 25px; color: #cbd5e1; }
-
-.footer {
-    background: #040912;
-    padding: 60px 0 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 45px;
-}
-
-.footer h4 { color: #ffffff; margin-bottom: 15px; font-size: 16px; }
-.footer p { color: #94a3b8; font-size: 14px; }
-.footer a { display: block; color: #64748b; font-size: 14px; margin-bottom: 10px; }
-.footer a:hover { color: #3b82f6; }
-.copyright {
