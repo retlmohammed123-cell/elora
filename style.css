@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ELORA - المظهر الكحلي الفاخر المدمج باللون البينك العصري (الإصدار المستقر الكامل)
+   ELORA - المظهر الكحلي الفاخر باللون البينك العصري (الإصدار المستقر الشامل والأخير)
    ========================================================================== */
 
 /* إعادة التعيين والخصائص العامة */
@@ -34,6 +34,7 @@ button, input, textarea {
     color: inherit;
     background: transparent;
     border: none;
+    outline: none;
 }
 
 .container {
@@ -137,21 +138,25 @@ button, input, textarea {
     display: none;
 }
 
-/* الأزرار العصرية الفائقة السلاسة */
+/* ==========================================================================
+   مراجعة وتحديث الأزرار العصرية الفائقة السلاسة (All Buttons State)
+   ========================================================================== */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 12px 22px;
+    padding: 12px 24px;
     border-radius: 14px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 800;
     border: 1px solid transparent;
     cursor: pointer;
+    white-space: nowrap;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
                 box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                background-color 0.3s ease;
+                background-color 0.3s ease, 
+                border-color 0.3s ease;
 }
 
 .btn-primary {
@@ -161,13 +166,17 @@ button, input, textarea {
 }
 
 .btn-primary:hover {
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(-4px) scale(1.03);
     box-shadow: 0 15px 35px rgba(255, 121, 198, 0.5);
 }
 
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
 .btn-ghost {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 121, 198, 0.2);
+    background: rgba(11, 19, 41, 0.4);
+    border: 1px solid rgba(255, 121, 198, 0.25);
     color: #ff92df;
 }
 
@@ -177,14 +186,99 @@ button, input, textarea {
     transform: translateY(-2px);
 }
 
+.btn-ghost:active {
+    transform: translateY(0);
+}
+
 .btn-white {
     background: #ffffff;
     color: #e14eca;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
 }
 
 .btn-white:hover {
     background: #fff0fa;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* زر مخصص ومبهر للاتصال ورقم الهاتف الجديد */
+.btn-contact-phone {
+    background: rgba(11, 19, 41, 0.6);
+    border: 1px solid rgba(255, 121, 198, 0.4);
+    color: #ffffff;
+    font-family: "Plus Jakarta Sans", 'Cairo', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.btn-contact-phone i {
+    color: #ff79c6;
+    font-size: 16px;
+    animation: pulse 2s infinite;
+}
+
+.btn-contact-phone:hover {
+    background: linear-gradient(135deg, #ff79c6, #e14eca);
+    color: #ffffff;
+    border-color: transparent;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255, 121, 198, 0.4);
+}
+
+.btn-contact-phone:hover i {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   شكل إضافة البريد الإلكتروني العصرية والفاخرة (Subscription Form)
+   ========================================================================== */
+.subscribe-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+    margin: 30px auto 0;
+    background: rgba(7, 13, 25, 0.6);
+    border: 1px solid rgba(255, 121, 198, 0.2);
+    padding: 6px 8px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.subscribe-form:focus-within {
+    border-color: #ff79c6;
+    box-shadow: 0 0 25px rgba(255, 121, 198, 0.15);
     transform: translateY(-2px);
+}
+
+.subscribe-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #ffffff;
+    background: transparent;
+}
+
+.subscribe-input::placeholder {
+    color: #6c7d93;
+}
+
+.subscribe-btn {
+    padding: 12px 26px;
+    border-radius: 13px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #e14eca, #ff79c6);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.subscribe-btn:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
 }
 
 /* أقسام الموقع والهيرو */
@@ -226,16 +320,6 @@ button, input, textarea {
     background: #ff79c6;
 }
 
-.eyebrow.plain {
-    background: transparent;
-    padding: 0;
-}
-
-.eyebrow.light {
-    background: rgba(255, 255, 255, 0.08);
-    color: #ffd2f1;
-}
-
 .hero h1, .page-hero h1 {
     font-size: clamp(40px, 5vw, 66px);
     line-height: 1.2;
@@ -245,13 +329,13 @@ button, input, textarea {
     color: #ffffff;
 }
 
-.hero h1 span, .page-hero h1 span, .cta-content h2 span {
-    color: #ff79c6; /* نصوص مميزة باللون البينك */
+.hero h1 span, .page-hero h1 span, .cta-content h2 span, .contact-highlight {
+    color: #ff79c6; 
 }
 
 .hero p, .page-hero p {
     max-width: 590px;
-    color: #a2adb8; /* لون مريح جداً للقراءة على الخلفية الكحلي */
+    color: #a2adb8; 
     font-size: 16px;
     line-height: 2;
     margin-bottom: 28px;
@@ -317,7 +401,7 @@ button, input, textarea {
 .floating-pill {
     position: absolute;
     z-index: 4;
-    background: rgba(11, 19, 41, 0.85); /* كحلي زجاجي */
+    background: rgba(11, 19, 41, 0.85); 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 121, 198, 0.25);
@@ -337,7 +421,7 @@ button, input, textarea {
 
 /* السيكشن الفرعي والبطاقات الزجاجية الداكنة */
 .section-soft {
-    background: linear-gradient(135deg, #0b1329, #070d19); /* تدرج كحلي فاخر */
+    background: linear-gradient(135deg, #0b1329, #070d19); 
 }
 
 .section-heading {
@@ -352,97 +436,3 @@ button, input, textarea {
     color: #ffffff;
 }
 
-.section-heading p {
-    color: #a2adb8;
-}
-
-.row-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    max-width: none;
-}
-
-.text-link {
-    color: #ff79c6;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.text-link:hover {
-    color: #ff92df;
-}
-
-.idea-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 18px;
-}
-
-/* بطاقات بتأثير حركي مطاطي وسلس للغاية */
-.glass-card, .track-card, .detail-card, .opportunity-card {
-    background: rgba(11, 19, 41, 0.5); /* كحلي شفاف */
-    border: 1px solid rgba(255, 121, 198, 0.06);
-    border-radius: 25px;
-    padding: 28px;
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.3);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-                border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-                background-color 0.4s ease,
-                box-shadow 0.4s ease;
-}
-
-.glass-card:hover, .track-card:hover, .detail-card:hover, .opportunity-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    border-color: rgba(255, 121, 198, 0.4);
-    background: rgba(18, 30, 61, 0.85); /* كحلي أكثر وضوحاً عند الحوّم */
-    box-shadow: 0 22px 60px rgba(255, 121, 198, 0.1);
-}
-
-.big-card { grid-row: span 2; min-height: 300px; }
-.card-index, .track-no { font: 800 12px "Plus Jakarta Sans", sans-serif; color: #ff79c6; }
-
-.icon-box {
-    width: 52px;
-    height: 52px;
-    border-radius: 17px;
-    background: rgba(255, 121, 198, 0.12);
-    color: #ff79c6;
-    display: grid;
-    place-items: center;
-    font-size: 22px;
-    margin: 18px 0;
-}
-
-.glass-card h3, .track-card h3 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-bottom: 8px;
-}
-
-.glass-card p, .track-card p, .detail-card p, .opportunity-card p {
-    color: #a2adb8;
-    font-size: 14px;
-    line-height: 1.9;
-    margin-bottom: 18px;
-}
-
-/* شبكة المسارات */
-.track-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-}
-
-.track-card { min-height: 270px; position: relative; }
-.track-card h3 { font-size: 18px; }
-.track-footer {
-    position: absolute;
-    bottom: 25px;
-    left: 28px;
-    color: #5d6d82;
-    font: 700 10px "Plus Jakarta Sans", sans-serif;
-}
-
-/* البانر والفوتر */
-.cta-band {
