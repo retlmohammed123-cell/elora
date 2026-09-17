@@ -352,3 +352,93 @@ button, input, textarea {
 /* أجزاء التفاعل الإضافية */
 .page-hero { padding-top: 175px; padding-bottom: 75px; }
 .narrow { max-width: 850px; margin-right: auto; margin-left: auto; }
+
+/* ==========================================================================
+   تعديل مخصص لقسم التواصل: خلفية بيضاء ونصوص سوداء مريحة
+   ========================================================================== */
+.contact-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 35px; 
+}
+
+/* الكروت الجانبية لبيانات التواصل */
+.contact-grid .contact-item { 
+    display: flex; 
+    gap: 15px; 
+    align-items: center; 
+    margin-bottom: 25px; 
+    background: #ffffff; /* خلفية بيضاء */
+    padding: 15px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.contact-grid .contact-item span { 
+    width: 45px; 
+    height: 45px; 
+    background: rgba(219, 39, 119, 0.1); /* خلفية بينك خفيفة للرمز */
+    color: #db2777;                      /* لون الرمز بينك داكن */
+    display: grid; 
+    place-items: center; 
+    border-radius: 12px; 
+    font-size: 20px; 
+}
+
+.contact-grid .contact-item small { 
+    font: 800 10px "Plus Jakarta Sans"; 
+    color: #64748b; /* رمادي للنص الفرعي */
+}
+
+.contact-grid .contact-item h3 { 
+    font-size: 16px; 
+    color: #0f172a; /* نص أسود داكن مريح جداً */
+}
+
+/* نموذج إرسال الرسائل (Form) */
+.contact-form {
+    background: #ffffff; /* خلفية بيضاء للنموذج */
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+}
+
+.contact-form label { 
+    display: block; 
+    margin-bottom: 18px; 
+    font-size: 14px; 
+    font-weight: 700; 
+    color: #1e293b; /* عناوين المدخلات باللون الأسود */
+}
+
+.contact-form input, .contact-form textarea { 
+    width: 100%; 
+    padding: 14px 18px; 
+    background: #f8fafc;           /* خلفية رمادية فاتحة جداً للمدخلات */
+    border: 1px solid #cbd5e1;     /* إطار واضح */
+    border-radius: 14px; 
+    margin-top: 6px; 
+    color: #0f172a;                /* الكتابة باللون الأسود الداكن */
+    outline: none; 
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus { 
+    border-color: #db2777; /* يتحول الإطار للوردي عند الضغط والكتابة */
+    box-shadow: 0 0 10px rgba(219, 39, 119, 0.15); 
+    background: #ffffff;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #94a3b8; /* لون نص التلميح المساعد */
+}
+
+/* رسالة نجاح الإرسال التجريربية */
+#formMessage {
+    margin-top: 15px; 
+    font-weight: 700; 
+    color: #db2777;
+}
